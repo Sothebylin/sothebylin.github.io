@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>learning_pyhealth</title>
+      <link href="/2024/04/30/learning-pyhealth/"/>
+      <url>/2024/04/30/learning-pyhealth/</url>
+      
+        <content type="html"><![CDATA[<h3 id="安装环境准备"><a href="#安装环境准备" class="headerlink" title="安装环境准备"></a>安装环境准备</h3><p>Pyhealth的环境配置如下，下载时需要满足依赖项的要求，如不满足需单独下载或更新依赖性。详见</p><p><a href="https://pyhealth.readthedocs.io/en/latest/install.html">官网</a>。</p><blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python&gt;=3.8</span><br><span class="line">torch&gt;=1.8.0</span><br><span class="line">rdkit&gt;=2022.03.4</span><br><span class="line">scikit-learn&gt;=0.24.2</span><br><span class="line">networkx&gt;=2.6.3</span><br><span class="line">pandas&gt;=1.3.2</span><br><span class="line">tqdm</span><br></pre></td></tr></table></figure></blockquote><p>命令行输入</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyhealth -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><h3 id="Pyhealth-data-结构"><a href="#Pyhealth-data-结构" class="headerlink" title="Pyhealth.data 结构"></a>Pyhealth.data 结构</h3><blockquote><ul><li><strong>[README]</strong>: This module defines the basic data structures in PyHealth.</li><li>[Structures]<ul><li><code>Event</code> is the info structure for a single clinical event</li><li><code>Visit</code> is the info structure for a single clinical visit</li><li><code>Patient</code> is the info structure for a single patient</li></ul></li></ul></blockquote><img src="/2024/04/30/learning-pyhealth/image-20240430214617217.png" alt="image-20240430214617217" style="zoom: 33%;"><h2 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h2><blockquote><ul><li><p>【变量】：</p></li><li><p>code&#96;：事件的代码，为字符串类型（例如，心脏衰竭的代码可以是 “428.0”）。</p></li><li><p><code>table</code>：记录事件的表的名称，为字符串类型（例如，”DIAGNOSES_ICD”）。</p></li><li><p><code>vocabulary</code>：代码的词汇表，为字符串类型（例如，’ICD9CM’、’ICD10CM’、’NDC’）。</p></li><li><p><code>visit_id</code>：访问的唯一标识符，为字符串类型。</p></li><li><p><code>patient_id</code>：患者的唯一标识符，为字符串类型。</p></li><li><p><code>timestamp</code>（可选）：事件的时间戳，为可选的 <code>datetime</code> 类型。默认为 None。</p></li><li><p><code>**attr</code>（可选）：事件的可选属性，作为键值对添加到访问中。</p></li><li><p>【属性】：显示附加属性</p><p>attr_dict：显示存储在 **attr 中的信息</p></li></ul></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CompuIntel——PSO</title>
       <link href="/2024/04/18/CompuIntel%E2%80%94%E2%80%94PSO/"/>
       <url>/2024/04/18/CompuIntel%E2%80%94%E2%80%94PSO/</url>
