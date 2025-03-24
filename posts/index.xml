@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 春日汀</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://sothebylin.github.io/posts/</link>
     <description>Recent content in Posts on 春日汀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Mon, 24 Mar 2025 21:54:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Mar 2025 21:37:38 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
