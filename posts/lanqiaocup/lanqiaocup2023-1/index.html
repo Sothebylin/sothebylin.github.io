@@ -104,7 +104,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1395"
+    "wordCount": "3213"
   }]
   </script>
 
@@ -540,7 +540,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-26T19:30:24&#43;08:00">26 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1395 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
+  <time datetime="2025-03-26T19:30:24&#43;08:00">26 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3213 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
   
 
   
@@ -699,6 +699,27 @@
         </li>
       </ul>
     </li>
+    <li><a href="#保险箱">保险箱</a>
+      <ul>
+        <li><a href="#问题描述-3">问题描述</a></li>
+        <li><a href="#输入格式">输入格式</a></li>
+        <li><a href="#输出格式">输出格式</a></li>
+        <li><a href="#样例输入-1">样例输入</a></li>
+        <li><a href="#样例输出-1">样例输出</a></li>
+        <li><a href="#ac代码-4">AC代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#管道">管道</a>
+      <ul>
+        <li><a href="#问题描述-4">问题描述</a></li>
+        <li><a href="#输入格式-1">输入格式</a></li>
+        <li><a href="#输出格式-1">输出格式</a></li>
+        <li><a href="#样例输入-2">样例输入</a></li>
+        <li><a href="#样例输出-2">样例输出</a></li>
+        <li><a href="#tle代码">TLE代码</a></li>
+        <li><a href="#ac代码-5">AC代码</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -755,6 +776,27 @@
             <li><a href="#ac代码-3">AC代码</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#保险箱">保险箱</a>
+      <ul>
+        <li><a href="#问题描述-3">问题描述</a></li>
+        <li><a href="#输入格式">输入格式</a></li>
+        <li><a href="#输出格式">输出格式</a></li>
+        <li><a href="#样例输入-1">样例输入</a></li>
+        <li><a href="#样例输出-1">样例输出</a></li>
+        <li><a href="#ac代码-4">AC代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#管道">管道</a>
+      <ul>
+        <li><a href="#问题描述-4">问题描述</a></li>
+        <li><a href="#输入格式-1">输入格式</a></li>
+        <li><a href="#输出格式-1">输出格式</a></li>
+        <li><a href="#样例输入-2">样例输入</a></li>
+        <li><a href="#样例输出-2">样例输出</a></li>
+        <li><a href="#tle代码">TLE代码</a></li>
+        <li><a href="#ac代码-5">AC代码</a></li>
       </ul>
     </li>
   </ul>
@@ -1181,6 +1223,397 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
+
+<h2 class="relative group">保险箱 
+    <div id="%E4%BF%9D%E9%99%A9%E7%AE%B1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%9D%E9%99%A9%E7%AE%B1" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">问题描述 
+    <div id="%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-3" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>小蓝有一个保险箱，保险箱上共有 <code>n</code> 位数字。小蓝可以任意调整保险箱上的每个数字，每一次操作可以将其中一位增加 <code>1</code> 或减少 <code>1</code>。当某位原本为 <code>9</code> 或 <code>0</code> 时可能会向前（左边）进位/退位，当最高位（左边第一位）上的数字变化时向前的进位或退位忽略。</p>
+<p><strong>示例：</strong></p>
+<ul>
+<li><code>00000</code> 的第 <code>5</code> 位减 <code>1</code> 变为 <code>99999</code>；</li>
+<li><code>99999</code> 的第 <code>5</code> 位减 <code>1</code> 变为 <code>99998</code>；</li>
+<li><code>00000</code> 的第 <code>4</code> 位减 <code>1</code> 变为 <code>99990</code>；</li>
+<li><code>97993</code> 的第 <code>4</code> 位加 <code>1</code> 变为 <code>98003</code>；</li>
+<li><code>99909</code> 的第 <code>3</code> 位加 <code>1</code> 变为 <code>00009</code>。</li>
+</ul>
+<p>保险箱上一开始有一个数字 <code>x</code>，小蓝希望把它变成 <code>y</code>，这样才能打开它。问小蓝最少需要操作的次数。</p>
+
+
+<h3 class="relative group">输入格式 
+    <div id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>第一行包含一个整数 <code>n</code>。</li>
+<li>第二行包含一个 <code>n</code> 位整数 <code>x</code>。</li>
+<li>第三行包含一个 <code>n</code> 位整数 <code>y</code>。</li>
+</ul>
+
+
+<h3 class="relative group">输出格式 
+    <div id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>输出一行包含一个整数表示答案。</p>
+
+
+<h3 class="relative group">样例输入 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>5</p>
+<p>12349</p>
+<p>54321</p></blockquote>
+
+
+<h3 class="relative group">样例输出 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>11</p></blockquote>
+<blockquote>
+<ul>
+<li>对于 <code>30%</code> 的评测用例，<code>1 ≤ n ≤ 300</code>；</li>
+<li>对于 <code>60%</code> 的评测用例，<code>1 ≤ n ≤ 3000</code>；</li>
+<li>对于所有评测用例，<code>1 ≤ n ≤ 1e5</code>，<code>x</code> 和 <code>y</code> 中仅包含数字 <code>0</code> 至 <code>9</code>，可能有前导零。</li>
+</ul></blockquote>
+
+
+<h3 class="relative group">AC代码 
+    <div id="ac%E4%BB%A3%E7%A0%81-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ac%E4%BB%A3%E7%A0%81-4" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>这个状态方程没想出来:(</p></blockquote>
+<p>定义动态规划状态 <code>dp[i][j]</code>，其中：</p>
+<ul>
+<li><code>i</code> 表示当前处理到数字的第 <code>i</code> 位（从低位到高位，即从右到左）。</li>
+<li><code>j</code> 表示当前位的进位/退位状态：
+<ul>
+<li><code>j = 0</code>：第 <code>i</code> 位<strong>既没有进位也没有退位</strong>的操作数。</li>
+<li><code>j = 1</code>：第 <code>i</code> 位<strong>进行了进位</strong>（即当前位数字 <code>+1</code> 后影响了高位）的操作数。</li>
+<li><code>j = 2</code>：第 <code>i</code> 位<strong>进行了退位</strong>（即当前位数字 <code>-1</code> 后影响了高位）的操作数。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">xv</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">yv</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="n">dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	 
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="o">&gt;&gt;</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">x</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="n">reverse</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">y</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">abs</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">({</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">abs</span><span class="p">(</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">abs</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">abs</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])});</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">({</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)),</span> <span class="c1">//上一位因为进位，因此xv[i]+1。又因为这一位要通过进位匹配，所以加上10 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))});</span> <span class="c1">//以此类推  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">({</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">						 <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">yv</span><span class="p">[</span><span class="n">i</span><span class="p">])});</span> 
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> 
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">min</span><span class="p">({</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">	 
+</span></span><span class="line"><span class="cl"> 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div>
+
+<h2 class="relative group">管道 
+    <div id="%E7%AE%A1%E9%81%93" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%AE%A1%E9%81%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">问题描述 
+    <div id="%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-4" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>有一根长度为 <code>len</code> 的横向管道，该管道按照单位长度分为 <code>len</code> 段，每一段的中央有一个可开关的阀门和一个检测水流的传感器。</p>
+<p>一开始管道是空的，位于 <code>Li</code> 的阀门会在 <code>Si</code> 时刻打开，并不断让水流入管道。</p>
+<p>对于位于 <code>Li</code> 的阀门，它流入的水在 <code>Ti</code> 时刻（<code>Ti &gt;= Si</code>）会使得从第 <code>Li - (Ti - Si)</code> 段到第 <code>Li + (Ti - Si)</code> 段的传感器检测到水流。</p>
+<p>求管道中每一段中间的传感器都检测到有水流的最早时间。</p>
+
+
+<h3 class="relative group">输入格式 
+    <div id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>输入的第一行包含两个整数 <code>n, len</code>，用一个空格分隔，分别表示会打开的阀门数和管道长度。</p>
+<p>接下来 <code>n</code> 行每行包含两个整数 <code>Li, Si</code>，用一个空格分隔，表示位于第 <code>Li</code> 段管道中央的阀门会在 <code>Si</code> 时刻打开。</p>
+
+
+<h3 class="relative group">输出格式 
+    <div id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>输出一行包含一个整数表示答案。</p>
+
+
+<h3 class="relative group">样例输入 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code>3 10
+1 1
+6 5
+10 2
+</code></pre>
+
+<h3 class="relative group">样例输出 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code>5
+</code></pre><ul>
+<li>对于 <code>30%</code> 的评测用例，<code>n &lt;= 200</code>，<code>Si, len &lt;= 3000</code>；</li>
+<li>对于 <code>70%</code> 的评测用例，<code>n &lt;= 5000</code>，<code>Si, len &lt;= 10^5</code>；</li>
+<li>对于所有评测用例，<code>1 &lt;= n &lt;= 10^5</code>，<code>1 &lt;= Si, len &lt;= 10^9</code>，<code>1 &lt;= Li &lt;= len</code>，<code>Li-1 &lt; Li</code>。</li>
+</ul>
+
+
+<h3 class="relative group">TLE代码 
+    <div id="tle%E4%BB%A3%E7%A0%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tle%E4%BB%A3%E7%A0%81" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>（只通过了百分之60，没采用经典的区间覆盖套路）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">judgeisfill</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">time</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;&gt;&amp;</span> <span class="n">water</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">covered</span><span class="p">(</span><span class="n">len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span> <span class="c1">// 用于标记每一段是否被覆盖
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">water</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">            <span class="kt">long</span> <span class="kt">long</span> <span class="n">left</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="mi">1LL</span><span class="p">,</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">-</span> <span class="p">(</span><span class="n">time</span> <span class="o">-</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">));</span> 
+</span></span><span class="line"><span class="cl">            <span class="kt">long</span> <span class="kt">long</span> <span class="n">right</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">+</span> <span class="p">(</span><span class="n">time</span> <span class="o">-</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">));</span> 
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="n">left</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">covered</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 标记覆盖范围
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">covered</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">pipe</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">s</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="kt">long</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">judgeisfill</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">water</span><span class="p">,</span> <span class="n">len</span><span class="p">))</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">l</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">AC代码 
+    <div id="ac%E4%BB%A3%E7%A0%81-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ac%E4%BB%A3%E7%A0%81-5" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">judgeisfill</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">time</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;&gt;&amp;</span> <span class="n">water</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span> <span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;</span> <span class="n">intervals</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">valve</span> <span class="p">:</span> <span class="n">water</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">valve</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 如果当前时间大于等于阀门打开的时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">long</span> <span class="kt">long</span> <span class="n">left</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="mi">1LL</span><span class="p">,</span> <span class="n">valve</span><span class="p">.</span><span class="n">first</span> <span class="o">-</span> <span class="p">(</span><span class="n">time</span> <span class="o">-</span> <span class="n">valve</span><span class="p">.</span><span class="n">second</span><span class="p">));</span> <span class="c1">// 计算左边界
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">long</span> <span class="kt">long</span> <span class="n">right</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">valve</span><span class="p">.</span><span class="n">first</span> <span class="o">+</span> <span class="p">(</span><span class="n">time</span> <span class="o">-</span> <span class="n">valve</span><span class="p">.</span><span class="n">second</span><span class="p">));</span> <span class="c1">// 计算右边界
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">intervals</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">intervals</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// 如果没有区间，直接返回 false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 按左端点排序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">sort</span><span class="p">(</span><span class="n">intervals</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">intervals</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 检查覆盖范围
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span> <span class="o">=</span> <span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">second</span><span class="p">;</span> <span class="c1">// 初始最远右端点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">intervals</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">first</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// 如果第一个区间的左端点大于 1，直接返回 false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">intervals</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">intervals</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">&gt;</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// 如果当前区间与 r 不相邻，返回 false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">r</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">intervals</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">);</span> <span class="c1">// 更新最远右端点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="n">len</span><span class="p">;</span> <span class="c1">// 如果 r 大于等于 len，返回 true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">long</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">&gt;&gt;</span> <span class="n">water</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">1e18</span><span class="p">;</span> <span class="c1">// 设置一个较大的上界
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="kt">long</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">judgeisfill</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">water</span><span class="p">,</span> <span class="n">len</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">l</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<p>区间覆盖是一个经典问题。我们可以按区间的左端点来排序这些区间。我们检查这些区间是否覆盖了整个管道。如果第一个区间的左端点大于 1，那么表示管道的开始部分没有被覆盖，直接返回 <code>false</code>。否则我们设一个变量 r 表示可到达的最远距离，r的初始值为第一个区间的右端点。我们接着检查其他区间是否与 r相邻或重叠。如果当前区间和 r 相邻或重叠，我们将当前区间的右端点和 r取最大值。最后如果 r≥len则说明成功覆盖所有区间，否则说明没有。</p></blockquote>
+
           
           
           
