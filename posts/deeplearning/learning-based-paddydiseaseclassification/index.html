@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="cn" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="zh-cn" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Learning Based Paddy_Disease_Classification &middot; 春日汀</title>
+  <meta name="title" content="Learning Based Paddy_Disease_Classification &middot; 春日汀" />
+  
+  <meta name="description" content="learning follow https://course.fast.ai/ " />
+  
+  
+  
+  <link rel="canonical" href="https://sothebylin.github.io/posts/deeplearning/learning-based-paddydiseaseclassification/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.1c9cd0d1ebaf117272b5c4f6bd49878475cb210d5e0da4f061632d779f5bb46851881c187e6e634dba5071c4e3d80e7d5cec1dd80443b2fa68acd358f9eda881.css"
+    integrity="sha512-HJzQ0euvEXJytcT2vUmHhHXLIQ1eDaTwYWMtd59btGhRiBwYfm5jTbpQccTj2A59XOwd2ARDsvporNNY&#43;e2ogQ==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.b6411b5d4cd56c0068d34c4acbce043846adad56b824e3d486a06d3459aed2eb7f7413874b7871cc2c822c8c8834cbed944022918bcc8cca710a962167c36d32.js"
+    integrity="sha512-tkEbXUzVbABo00xKy84EOEatrVa4JOPUhqBtNFmu0ut/dBOHS3hxzCyCLIyINMvtlEAikYvMjMpxCpYhZ8NtMg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="https://sothebylin.github.io/posts/deeplearning/learning-based-paddydiseaseclassification/">
+  <meta property="og:site_name" content="春日汀">
+  <meta property="og:title" content="Learning Based Paddy_Disease_Classification">
+  <meta property="og:description" content="learning follow https://course.fast.ai/">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-27T15:23:05+08:00">
+    <meta property="article:modified_time" content="2025-03-27T15:23:05+08:00">
+      <meta property="og:see_also" content="https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Learning Based Paddy_Disease_Classification">
+  <meta name="twitter:description" content="learning follow https://course.fast.ai/">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Learning Based Paddy_Disease_Classification",
+    "headline": "Learning Based Paddy_Disease_Classification",
+    "description": "learning follow https:\/\/course.fast.ai\/ ",
+    
+    "inLanguage": "zh-cn",
+    "url" : "https:\/\/sothebylin.github.io\/posts\/deeplearning\/learning-based-paddydiseaseclassification\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Sothebylin"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-03-27T15:23:05\u002b08:00",
+    "datePublished": "2025-03-27T15:23:05\u002b08:00",
+    
+    "dateModified": "2025-03-27T15:23:05\u002b08:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3289"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Sothebylin" />
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    
+    
+    
+    <div>
+        <a href="/" class="flex">
+            <span class="sr-only">春日汀</span>
+
+            
+            <span class="logo object-scale-down object-left nozoom">
+                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1742879876450" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9698" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M381.5 569.3c2.5-3.4 20.4-82.3-92.1-129.3 2.2 56.4 6.2 109 94.6 125.9M532.6 195c2.8 3.6 80.9 45.7 163.7-59.2-60.2-14.3-116.9-25.5-160.8 62.8" fill="#BFE5BD" p-id="9699"></path><path d="M472.8 748.5C442.5 863.8 317.6 929.1 203.3 883c-53.6-21.6-95.6-67-113.8-121.9-21.6-65.4-11.4-141.6 45.8-185.6 29.9-23 67.9-32.7 105.3-29.7 37.7 3 71.2 21.4 107 32 43.3 12.7 91 25.1 117.4 65.2 20.6 31.4 16.9 70.8 7.8 105.5z" fill="#FF768D" p-id="9700"></path><path d="M282.8 847c-53.6-21.6-95.6-67-113.8-121.9-21.6-65.4-11.4-141.5 45.6-185.5-26.7 3-52.5 12.6-74.1 29.2-57.2 44-67.4 120.2-45.8 185.6C113 809.3 155 854.7 208.6 876.3c64.6 26.1 132.6 16.6 185-17.5-35.7 6.3-73.8 3.1-110.8-11.8z" fill="#E8627F" p-id="9701"></path><path d="M939.1 690.1c18.5 117.8-69.8 227.7-193 231.2-57.8 1.7-114.4-23-153.1-66.1-46-51.3-67.2-125.1-32.4-188.4 18.2-33.1 49.1-57.2 84.6-69.4 35.8-12.3 73.8-8.9 110.9-13.6 44.8-5.7 93.5-13.5 133.7 12.7 31.4 20.6 43.8 58.2 49.3 93.6z" fill="#FF768D" p-id="9702"></path><path d="M753.5 880.3c-53.6-21.6-95.6-67-113.8-121.9-21.6-65.4-11.4-141.5 45.6-185.5-26.7 3-52.5 12.6-74.1 29.2-57.2 44-67.4 120.2-45.8 185.6 18.2 54.9 60.2 100.2 113.8 121.9 64.6 26.1 132.6 16.6 185-17.5-35.6 6.4-73.7 3.1-110.7-11.8z" fill="#E8627F" p-id="9703"></path><path d="M956.5 685.8c-6.1-50.7-23.2-85.2-52.3-105.7-41.9-29.5-92.3-24.8-136.8-20.8-2.1 0.2-4.2 0.4-6.2 0.6-12.1 1.1-24.2 1.3-37 1.5-3.1 0-6.1 0.1-9.2 0.2 2.3-56.4-11.6-114.6-41.4-173.3-25.7-50.6-63.4-101.7-111.8-151.9-4.8-5-9.6-9.9-14.5-14.6 17 6 32.5 8.7 46.5 8.7 62.2 0 97.6-52.1 127.6-96.2l11.7-17.3-20.1-5.6c-81.9-22.8-133-1.9-161.5 19.7-23.3 17.7-37 39.8-43 54.5-61.6-54.5-113.3-86.8-116.1-88.5-7-4.4-16.3-2.2-20.6 4.8-4.4 7-2.2 16.3 4.8 20.7 0.6 0.4 44.3 27.7 98.5 73.9 2.4 15.4 8.8 65.7 3.4 127.9-5.4 62.6-24.1 149.7-81.2 221.6-0.6-6-1.7-12.4-3.5-19-8-28.7-31.9-68.8-99.9-97.3l-21.7-9 0.9 23.5c1.1 29.8 2.5 63.5 20.8 91.1-16.1-5.5-32.9-10-50.8-11.5-42.7-3.4-83.7 8.2-115.6 32.7-29.7 22.9-49.8 55.2-58 93.5-7.4 34.6-5 72.2 7.1 108.7 9.6 29 25.8 56.3 46.9 78.9 21.2 22.7 47.3 40.7 75.6 52.1 26.4 10.6 53.7 16 81.5 16 3.5 0 7-0.1 10.6-0.3 30-1.5 58.9-9.1 85.9-22.6 55.3-27.8 96-78 111.6-137.7 12.9-49.4 9.7-87.8-9.9-117.5-16.9-25.7-41.2-41.1-67.2-52 29.6-34.2 52.9-74.6 69.4-120.3 14.3-39.5 23.5-83 27.4-129.3 3.4-39.8 2.2-74.6 0.2-99.6 10.6 9.9 21.2 20.3 31.9 31.3C610.4 330.1 690.9 441 684.7 563c-12.6 1.1-25.3 3.2-38 7.1-41 12.5-74.9 38.4-95.5 72.9-19.2 32.2-26 69.6-19.6 108.3 5.8 34.9 21.9 69 46.5 98.5 19.6 23.5 44.7 42.9 72.6 56.2 28 13.4 58.9 20.5 89.4 20.8h1.8c31.4 0 61.5-6.4 89.6-19.1 27.4-12.4 51.5-30.1 71.6-52.6 41.3-46.3 60.7-107.9 53.4-169.3zM348.2 503.1c-6.3-2.8-14-0.9-18.2 5-4.8 6.7-3.3 16.1 3.4 20.9 2 1.5 5.1 5.3 8.7 10.4-28.4-16.7-35.3-42.2-37.7-71.7 18.4 10.2 33.2 22.2 43.8 35.4z m105.5 140.8c14.6 22.2 16.6 52.8 5.9 93.4-13.5 51.4-48.5 94.7-96.1 118.5-48.2 24.2-102.7 26.3-153.3 5.9-49.1-19.8-88.4-61.9-105.2-112.7-16.7-50.6-16.1-125.3 40.7-169 22.9-17.7 51.9-27.1 82.7-27.1 4 0 8.1 0.2 12.2 0.5 22.8 1.8 44.2 9.9 66.9 18.5 12 4.5 24.4 9.2 37.1 12.9 2 0.6 4 1.2 6.1 1.8 39.7 11.7 80.9 23.7 103 57.3zM684 135.2c-17.9 25.2-34.6 45.1-55.1 56.2-13.3 7.2-33.6 14.2-66.9 3.7 16.3-8.1 31.4-14.3 37.3-14.3h0.2c8.2 0 14.9-6.6 15-14.9 0.1-8.3-6.6-15-14.9-15.1h-0.2c-10.1 0-24.8 5.3-39.1 11.7 5.5-5.2 12-10.3 19.7-14.8 28-16.4 62.8-20.6 104-12.5z m196.8 699.7c-35.6 39.8-84.9 61.7-138.9 61.7h-1.6c-52.9-0.4-104.9-25.2-139.2-66.2-34.2-40.9-61-110.6-24.2-172.1 16.8-28.1 44.7-49.3 78.5-59.6 21.9-6.7 44.8-7 69-7.4 12.8-0.2 26-0.4 39.3-1.6l6.3-0.6c15.6-1.4 31.4-2.9 46.8-2.9 25.3 0 49.6 3.9 70.1 18.3 21.8 15.3 34.8 43 39.8 84.7 6.3 53-10.4 106.1-45.9 145.7z" fill="#333333" p-id="9704"></path><path d="M301.6 808.6c-7.6-3.2-16.4 0.4-19.7 8-3.2 7.6 0.4 16.4 8 19.7 10.2 4.3 20.3 6.4 30.2 6.4 17.4 0 34.3-6.6 49.8-19.6 17.2-14.4 26.6-32 27-32.7 3.9-7.3 1.1-16.4-6.2-20.3-7.3-3.9-16.4-1.1-20.3 6.2-1.1 2-27.4 49.8-68.8 32.3zM859.5 778.1c-7.3-3.9-16.4-1.1-20.3 6.2-1.1 2-27.4 49.8-68.8 32.3-7.6-3.2-16.4 0.4-19.7 8-3.2 7.6 0.4 16.4 8 19.7 10.2 4.3 20.3 6.4 30.2 6.4 17.4 0 34.3-6.6 49.8-19.6 17.2-14.4 26.6-32 27-32.7 3.9-7.3 1.1-16.4-6.2-20.3z" fill="#333333" p-id="9705"></path></svg>
+            </span>
+            
+
+        </a>
+    </div>
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">春日汀</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <span  class="mr-1" >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256,232.562c-21.183,-41.196 -78.868,-117.97 -132.503,-155.834c-51.378,-36.272 -70.978,-29.987 -83.828,-24.181c-14.872,6.72 -17.577,29.554 -17.577,42.988c0,13.433 7.365,110.138 12.169,126.281c15.873,53.336 72.376,71.358 124.413,65.574c2.66,-0.395 5.357,-0.759 8.089,-1.097c-2.68,0.429 -5.379,0.796 -8.089,1.097c-76.259,11.294 -143.984,39.085 -55.158,137.972c97.708,101.165 133.908,-21.692 152.484,-83.983c18.576,62.291 39.972,180.718 150.734,83.983c83.174,-83.983 22.851,-126.674 -53.408,-137.969c-2.71,-0.302 -5.409,-0.667 -8.089,-1.096c2.732,0.337 5.429,0.702 8.089,1.096c52.037,5.785 108.54,-12.239 124.413,-65.574c4.804,-16.142 12.169,-112.847 12.169,-126.281c-0,-13.434 -2.705,-36.267 -17.577,-42.988c-12.85,-5.806 -32.45,-12.09 -83.829,24.181c-53.634,37.864 -111.319,114.635 -132.502,155.831Z"/></svg>
+  </span>
+
+
+    </span>
+    
+    <p class="text-base font-medium" title="春日汀">
+        Home
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <span  class="mr-1" >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 511.471"><path fill="currentColor" d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/></svg>
+  </span>
+
+
+    </span>
+    
+    <p class="text-base font-medium" title="文章分类">
+        Categories
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <span  class="mr-1" >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+    </span>
+    
+    <p class="text-base font-medium" title="Posts">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <div  class="mr-2" >
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256,232.562c-21.183,-41.196 -78.868,-117.97 -132.503,-155.834c-51.378,-36.272 -70.978,-29.987 -83.828,-24.181c-14.872,6.72 -17.577,29.554 -17.577,42.988c0,13.433 7.365,110.138 12.169,126.281c15.873,53.336 72.376,71.358 124.413,65.574c2.66,-0.395 5.357,-0.759 8.089,-1.097c-2.68,0.429 -5.379,0.796 -8.089,1.097c-76.259,11.294 -143.984,39.085 -55.158,137.972c97.708,101.165 133.908,-21.692 152.484,-83.983c18.576,62.291 39.972,180.718 150.734,83.983c83.174,-83.983 22.851,-126.674 -53.408,-137.969c-2.71,-0.302 -5.409,-0.667 -8.089,-1.096c2.732,0.337 5.429,0.702 8.089,1.096c52.037,5.785 108.54,-12.239 124.413,-65.574c4.804,-16.142 12.169,-112.847 12.169,-126.281c-0,-13.434 -2.705,-36.267 -17.577,-42.988c-12.85,-5.806 -32.45,-12.09 -83.829,24.181c-53.634,37.864 -111.319,114.635 -132.502,155.831Z"/></svg>
+  </span>
+
+
+        </div>
+        
+        <p class="text-bg font-bg" title="春日汀">
+            Home
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <div  class="mr-2" >
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 511.471"><path fill="currentColor" d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/></svg>
+  </span>
+
+
+        </div>
+        
+        <p class="text-bg font-bg" title="文章分类">
+            Categories
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <div  class="mr-2" >
+            
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+        </div>
+        
+        <p class="text-bg font-bg" title="Posts">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+ 
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Learning Based Paddy_Disease_Classification
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-03-27T15:23:05&#43;08:00">27 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3289 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/deeplearning/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    DeepLearning
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="Sothebylin" src="/avator/Vertin_hu_58addfe6f0a656ba.jpg" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      作者
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Sothebylin
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">东风袅袅泛崇光，香雾空蒙月转廊</div>
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#采用resnet26d训练">采用<code>Resnet26d</code>训练</a>
+      <ul>
+        <li><a href="#定义学习模型并查找学习率">定义学习模型并查找学习率</a></li>
+        <li><a href="#resnet26d模型训练"><code>Resnet26d</code>模型训练</a></li>
+        <li><a href="#将训练好的resnet26d应用到测试集上">将训练好的<code>Resnet26d</code>应用到测试集上</a></li>
+        <li><a href="#改进一下resnet26d">改进一下<code>Resnet26d</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#使用connext_small模型">使用<code>ConNeXt_small</code>模型</a>
+      <ul>
+        <li><a href="#定义convnext_small_in22k学习模型">定义<code>convnext_small_in22k</code>学习模型</a></li>
+        <li><a href="#对图像进行填充处理">对图像进行填充处理</a></li>
+        <li><a href="#再次进行训练">再次进行训练</a></li>
+        <li><a href="#应用测试时间增强test-time-augmentationtta">应用测试时间增强<code>Test time augmentation</code>（TTA）</a></li>
+        <li><a href="#将convnext应用的规模扩大">将<code>ConvNext</code>应用的规模扩大</a></li>
+        <li><a href="#将convnext应用到测试集上">将<code>ConvNext</code>应用到测试集上</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建多输出的模型">创建多输出的模型</a>
+      <ul>
+        <li><a href="#创建模型准备">创建模型准备</a></li>
+        <li><a href="#定义多输出的学习模型">定义多输出的学习模型</a></li>
+        <li><a href="#多输出模型训练">多输出模型训练</a></li>
+        <li><a href="#添加softmax并查看输出结果">添加<code>softmax</code>并查看输出结果</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#采用resnet26d训练">采用<code>Resnet26d</code>训练</a>
+      <ul>
+        <li><a href="#定义学习模型并查找学习率">定义学习模型并查找学习率</a></li>
+        <li><a href="#resnet26d模型训练"><code>Resnet26d</code>模型训练</a></li>
+        <li><a href="#将训练好的resnet26d应用到测试集上">将训练好的<code>Resnet26d</code>应用到测试集上</a></li>
+        <li><a href="#改进一下resnet26d">改进一下<code>Resnet26d</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#使用connext_small模型">使用<code>ConNeXt_small</code>模型</a>
+      <ul>
+        <li><a href="#定义convnext_small_in22k学习模型">定义<code>convnext_small_in22k</code>学习模型</a></li>
+        <li><a href="#对图像进行填充处理">对图像进行填充处理</a></li>
+        <li><a href="#再次进行训练">再次进行训练</a></li>
+        <li><a href="#应用测试时间增强test-time-augmentationtta">应用测试时间增强<code>Test time augmentation</code>（TTA）</a></li>
+        <li><a href="#将convnext应用的规模扩大">将<code>ConvNext</code>应用的规模扩大</a></li>
+        <li><a href="#将convnext应用到测试集上">将<code>ConvNext</code>应用到测试集上</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建多输出的模型">创建多输出的模型</a>
+      <ul>
+        <li><a href="#创建模型准备">创建模型准备</a></li>
+        <li><a href="#定义多输出的学习模型">定义多输出的学习模型</a></li>
+        <li><a href="#多输出模型训练">多输出模型训练</a></li>
+        <li><a href="#添加softmax并查看输出结果">添加<code>softmax</code>并查看输出结果</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        fastai course learning  - 这篇文章属于一个选集。
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/">
+            § 1: Create Neural Net From Scratch
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        § 2: 本文
+    </div>
+    
+    
+
+
+</details>
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h1 class="relative group">Learning neural network further 
+    <div id="learning-neural-network-further" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#learning-neural-network-further" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<blockquote>
+<p>本文复现的是fastai的官方视频教程 <a href="https://course.fast.ai/Lessons/lesson7.html" target="_blank">点击此处跳转</a></p>
+<p>其官方kaggle笔记本 <a href="https://www.kaggle.com/code/jhoward/first-steps-road-to-the-top-part-1/input" target="_blank">点击此处跳转</a></p></blockquote>
+<blockquote>
+<p>本篇博客是在fastai课程基础上进行总结，基于kaggle上的paddy disease classificatin比赛，使用了Resnet框架和Convnext框架实现对疾病的分类，结果发现Convnext比Resnext效果更好，并且使用了测试时间增强（TTA）、扩大训练规模、对图像进行填充等方式探究降低误差的效果，最后还构建了多输出模型，输出疾病以及种类。</p></blockquote>
+
+
+<h2 class="relative group">Setup 
+    <div id="setup" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#setup" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">Uq</span> <span class="n">fastkaggle</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fastai</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fastkaggle</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;paddy-disease-classification&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">path</span> <span class="o">=</span> <span class="n">setup_comp</span><span class="p">(</span><span class="n">comp</span><span class="p">,</span> <span class="n">install</span><span class="o">=</span><span class="s1">&#39;fastai &#34;timm&gt;=0.6.2.dev0&#34;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+</span></span></code></pre></div><blockquote>
+<p>(#4) [Path(&rsquo;../input/paddy-disease-classification/sample_submission.csv&rsquo;),Path(&rsquo;../input/paddy-disease-classification/train_images&rsquo;),Path(&rsquo;../input/paddy-disease-classification/train.csv&rsquo;),Path(&rsquo;../input/paddy-disease-classification/test_images&rsquo;)]</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">trn_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_images&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">imgfiles</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">trn_path</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">img</span> <span class="o">=</span> <span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">imgfiles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">img</span><span class="o">.</span><span class="n">to_thumb</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>(480, 640)</p></blockquote>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_9_1.png" alt="png" />
+      
+    </figure>
+</p>
+<p>不过要注意的是<code>PIL</code>展示的图像尺寸格式</p>
+<table>
+  <thead>
+      <tr>
+          <th>库/方法</th>
+          <th>尺寸格式</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>PIL / PILImage</strong></td>
+          <td><code>(宽度, 高度)</code></td>
+          <td>直接对应图像的实际像素尺寸</td>
+      </tr>
+      <tr>
+          <td><strong>OpenCV</strong></td>
+          <td><code>(高度, 宽度)</code></td>
+          <td>OpenCV 使用 <code>(h, w)</code> 的 NumPy 风格</td>
+      </tr>
+      <tr>
+          <td><strong>matplotlib</strong></td>
+          <td><code>(宽度, 高度)</code></td>
+          <td>与 PIL 一致</td>
+      </tr>
+      <tr>
+          <td><strong>PyTorch</strong></td>
+          <td><code>(通道, 高度, 宽度)</code></td>
+          <td>张量格式（需额外注意）</td>
+      </tr>
+  </tbody>
+</table>
+<p>为检查所有图像的尺寸采用<code>fastcore</code>中的<code>parallel</code>模块并行处理</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fastcore.parallel</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">o</span><span class="p">):</span> <span class="k">return</span> <span class="n">PILImage</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">o</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</span></span><span class="line"><span class="cl"><span class="n">sizes</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">imgfiles</span><span class="p">,</span> <span class="n">n_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</span></span></code></pre></div><blockquote>
+<p>(480, 640)    10403
+(640, 480)        4
+Name: count, dtype: int64</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trn_path</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>  <span class="c1">#当未划分训练集和验证集时需要传递valid_pct参数</span>
+</span></span><span class="line"><span class="cl">    <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;squish&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">batch_tfms</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span><span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                  <span class="p">)</span>
+</span></span></code></pre></div><p><strong><code>item_tfms</code></strong> 是 ImageDataLoaders.from_folder() 方法的一个参数名，全称为 ​<code>item transformations​</code>（单样本变换）。它用于定义在数据加载时对单个图像（item）应用的预处理或增强操作。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_16_0.png" alt="png" />
+      
+    </figure>
+</p>
+<p><code>fastai</code> 的 <code>from_folder</code> 方式能从子文件夹名自动提取类别。</p>
+
+
+<h2 class="relative group">采用<code>Resnet26d</code>训练 
+    <div id="%E9%87%87%E7%94%A8resnet26d%E8%AE%AD%E7%BB%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%87%87%E7%94%A8resnet26d%E8%AE%AD%E7%BB%83" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">定义学习模型并查找学习率 
+    <div id="%E5%AE%9A%E4%B9%89%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%B9%B6%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0%E7%8E%87" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%9A%E4%B9%89%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%B9%B6%E6%9F%A5%E6%89%BE%E5%AD%A6%E4%B9%A0%E7%8E%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">vision_learner</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dls</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;resnet26d&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_fp16</span><span class="p">()</span>
+</span></span></code></pre></div><blockquote>
+<p>model.safetensors:   0%|          | 0.00/64.2M [00:00&lt;?, ?B/s]</p></blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>参数</th>
+          <th>作用</th>
+          <th>示例值/类型</th>
+          <th>补充说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>dls</code></td>
+          <td>数据加载器，包含训练集和验证集</td>
+          <td><code>ImageDataLoaders</code>对象</td>
+          <td>需通过 <code>DataBlock</code> 或工厂函数（如 <code>ImageDataLoaders.from_folder</code>）生成</td>
+      </tr>
+      <tr>
+          <td><code>'resnet26d'</code></td>
+          <td>模型架构（ResNet的变体，平衡速度和精度）</td>
+          <td>字符串或<code>nn.Module</code></td>
+          <td>其他选项：<code>'resnet34'</code>, <code>'efficientnet_b0'</code>, <code>'convnext_tiny'</code> 等</td>
+      </tr>
+      <tr>
+          <td><code>metrics</code></td>
+          <td>训练时计算的评估指标（支持单指标或列表）</td>
+          <td><code>error_rate</code></td>
+          <td><strong>常用指标</strong>：<br> • <code>accuracy</code><br> • <code>Precision</code><br> • <code>Recall</code><br> • <code>F1Score</code><br> • <code>RocAuc</code>（二分类）<br> • <code>Perplexity</code>（语言模型）</td>
+      </tr>
+      <tr>
+          <td><code>path</code></td>
+          <td>模型和日志的保存目录（<code>.</code>表示当前目录）</td>
+          <td>字符串或<code>Path</code>对象</td>
+          <td>保存内容包括：<br> • 模型参数（<code>.pth</code>）<br> • 训练日志（<code>history.csv</code>）</td>
+      </tr>
+      <tr>
+          <td><code>.to_fp16()</code></td>
+          <td>启用混合精度训练（FP16），加速训练并减少显存占用</td>
+          <td>方法调用</td>
+          <td>需GPU支持（如NVIDIA Volta+架构）<br> 可用 <code>.to_fp32()</code> 强制禁用</td>
+      </tr>
+  </tbody>
+</table>
+<p>查找一下最佳的学习率</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">lr_find</span><span class="p">(</span><span class="n">suggest_funcs</span><span class="o">=</span><span class="p">(</span><span class="n">valley</span><span class="p">,</span><span class="n">slide</span><span class="p">))</span>
+</span></span></code></pre></div><blockquote>
+<p>SuggestedLRs(valley=0.0010000000474974513, slide=0.0020892962347716093)</p></blockquote>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_23_4.png" alt="png" />
+      
+    </figure>
+</p>
+<p><strong>suggest_funcs 参数</strong>：指定学习率推荐策略</p>
+<p><code>valley</code>：选择损失下降最陡峭的点（避免过大的学习率）。</p>
+<p><code>slide</code>：选择损失开始平稳上升的点（保守但稳定）。</p>
+
+
+<h3 class="relative group"><code>Resnet26d</code>模型训练 
+    <div id="resnet26d%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#resnet26d%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+</span></span></code></pre></div><style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.783480</td>
+      <td>1.293824</td>
+      <td>0.423835</td>
+      <td>00:42</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.128158</td>
+      <td>0.715136</td>
+      <td>0.238827</td>
+      <td>00:42</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.802069</td>
+      <td>0.490330</td>
+      <td>0.160980</td>
+      <td>00:42</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.569914</td>
+      <td>0.385769</td>
+      <td>0.135992</td>
+      <td>00:42</td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+<li>
+<p><strong>fine_tune()</strong> 是 fastai 提供的微调方法，分两阶段自动训练：</p>
+<p>1)冻结阶段（Freeze）​</p>
+<blockquote>
+<p>仅训练新增的头部层​（替换后的最后一层），预训练主干层保持冻结。
+默认1轮​（可通过 freeze_epochs 修改）。
+学习率自动设为 base_lr/10（若未指定 base_lr，则用传入的 0.01）。</p></blockquote>
+<p>2)解冻阶段（Unfreeze）​</p>
+<blockquote>
+<p>解冻所有层，全部参与训练。
+训练剩余轮数​（此处 3 - 1 = 2 轮）。
+使用传入的学习率 0.01（或通过 lr_find() 优化的值。</p></blockquote>
+<p><code>fastai </code>的 <code>vision_learner </code>会<strong>自动</strong>从数据加载器 (dls) 中推断输出维度</p>
+<p>新增的头部层<code>（New Head Layers）</code>​ 是指当使用预训练模型（如<code>ResNet</code>、<code>EfficientNet</code>等）进行迁移学习时，​替换或添加的最后一层（或几层）网络结构，用于适配当前任务的输出需求</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">将训练好的<code>Resnet26d</code>应用到测试集上 
+    <div id="%E5%B0%86%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84resnet26d%E5%BA%94%E7%94%A8%E5%88%B0%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%B0%86%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84resnet26d%E5%BA%94%E7%94%A8%E5%88%B0%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tst_files</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;test_images&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sorted</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">tst_dl</span> <span class="o">=</span> <span class="n">dls</span><span class="o">.</span><span class="n">test_dl</span><span class="p">(</span><span class="n">tst_files</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>test_dl() </code>是 ​fastai 库中 <code>DataLoaders </code>对象的一个方法，专门用于为测试集（或推理数据）​创建一个与训练时数据预处理一致的数据加载器</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">probs</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">idxs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">tst_dl</span><span class="p">,</span> <span class="n">with_decoded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">idxs</span>
+</span></span></code></pre></div><blockquote>
+<p>tensor([7, 8, 4,  &hellip;, 8, 1, 5])</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">idxs</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;idxs&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span>
+</span></span></code></pre></div><blockquote>
+<p>0                       hispa
+1                      normal
+2                  brown_spot
+3                       blast
+4                       blast
+&hellip;       <br>
+3464               dead_heart
+3465                    hispa
+3466                   normal
+3467    bacterial_leaf_streak
+3468               dead_heart
+Name: idxs, Length: 3469, dtype: object</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;sample_submission.csv&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ss</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span>
+</span></span><span class="line"><span class="cl"><span class="n">ss</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;subm.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">head</span> <span class="n">subm</span><span class="o">.</span><span class="n">csv</span>
+</span></span></code></pre></div><blockquote>
+<p>image_id,label
+200001.jpg,hispa
+200002.jpg,normal
+200003.jpg,brown_spot
+200004.jpg,blast
+200005.jpg,blast
+200006.jpg,brown_spot
+200007.jpg,dead_heart
+200008.jpg,brown_spot
+200009.jpg,hispa</p></blockquote>
+
+
+<h3 class="relative group">改进一下<code>Resnet26d</code> 
+    <div id="%E6%94%B9%E8%BF%9B%E4%B8%80%E4%B8%8Bresnet26d" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%94%B9%E8%BF%9B%E4%B8%80%E4%B8%8Bresnet26d" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>为了让模型训练的更快，我们可以将图像的大小缩小（让像素数量减少4倍）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">trn_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;sml&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">resize_images</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_images&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">trn_path</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">recurse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></div><p>fastai 有一个函数可以做到这一点，同时保持数据的文件夹结构即resize_images</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">trn_path</span><span class="p">,</span> <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span><span class="mi">192</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_41_0.png" alt="png" />
+      
+    </figure>
+</p>
+<p>将之前训练的步骤封装起来</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">trn_path</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">item_tfms</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">batch_tfms</span><span class="o">=</span><span class="n">batch</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">learn</span> <span class="o">=</span> <span class="n">vision_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span><span class="o">.</span><span class="n">to_fp16</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">learn</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="s1">&#39;resnet26d&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">192</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">              <span class="n">batch</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">))</span>
+</span></span></code></pre></div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.942248</td>
+      <td>1.426470</td>
+      <td>0.463239</td>
+      <td>00:17</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.289961</td>
+      <td>0.999535</td>
+      <td>0.333974</td>
+      <td>00:19</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1.018504</td>
+      <td>0.688591</td>
+      <td>0.216242</td>
+      <td>00:18</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.740462</td>
+      <td>0.482486</td>
+      <td>0.160019</td>
+      <td>00:18</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.529927</td>
+      <td>0.406155</td>
+      <td>0.124459</td>
+      <td>00:18</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.435775</td>
+      <td>0.372298</td>
+      <td>0.116771</td>
+      <td>00:18</td>
+    </tr>
+  </tbody>
+</table>
+<p>可以看到准确率是有了提升</p>
+
+
+<h2 class="relative group">使用<code>ConNeXt_small</code>模型 
+    <div id="%E4%BD%BF%E7%94%A8connext_small%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8connext_small%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">定义<code>convnext_small_in22k</code>学习模型 
+    <div id="%E5%AE%9A%E4%B9%89convnext_small_in22k%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%9A%E4%B9%89convnext_small_in22k%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arch</span> <span class="o">=</span> <span class="s1">&#39;convnext_small_in22k&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;squish&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">              <span class="n">batch</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">))</span>
+</span></span></code></pre></div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.245993</td>
+      <td>0.795927</td>
+      <td>0.255166</td>
+      <td>00:55</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.647190</td>
+      <td>0.434121</td>
+      <td>0.148967</td>
+      <td>00:53</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.477503</td>
+      <td>0.379062</td>
+      <td>0.119654</td>
+      <td>00:53</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.300822</td>
+      <td>0.191345</td>
+      <td>0.060548</td>
+      <td>00:52</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.192040</td>
+      <td>0.134807</td>
+      <td>0.039404</td>
+      <td>00:52</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.127018</td>
+      <td>0.125794</td>
+      <td>0.036521</td>
+      <td>00:52</td>
+    </tr>
+  </tbody>
+</table>
+<p>损失降低了很多，Convnext模型在这个数据集上的效果要比Resnet好</p>
+
+
+<h3 class="relative group">对图像进行填充处理 
+    <div id="%E5%AF%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E8%A1%8C%E5%A1%AB%E5%85%85%E5%A4%84%E7%90%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%B9%E5%9B%BE%E5%83%8F%E8%BF%9B%E8%A1%8C%E5%A1%AB%E5%85%85%E5%A4%84%E7%90%86" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span> <span class="o">=</span> <span class="n">ImageDataLoaders</span><span class="o">.</span><span class="n">from_folder</span><span class="p">(</span><span class="n">trn_path</span><span class="p">,</span> <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Pad</span><span class="p">,</span> <span class="n">pad_mode</span><span class="o">=</span><span class="n">PadMode</span><span class="o">.</span><span class="n">Zeros</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_52_0.png" alt="png" />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">再次进行训练 
+    <div id="%E5%86%8D%E6%AC%A1%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%86%8D%E6%AC%A1%E8%BF%9B%E8%A1%8C%E8%AE%AD%E7%BB%83" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">Resize</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span><span class="mi">192</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Pad</span><span class="p">,</span> <span class="n">pad_mode</span><span class="o">=</span><span class="n">PadMode</span><span class="o">.</span><span class="n">Zeros</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="n">batch</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">171</span><span class="p">,</span><span class="mi">128</span><span class="p">),</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">))</span>
+</span></span></code></pre></div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.225350</td>
+      <td>0.838977</td>
+      <td>0.261413</td>
+      <td>00:44</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.647279</td>
+      <td>0.475882</td>
+      <td>0.153292</td>
+      <td>00:51</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.532679</td>
+      <td>0.375510</td>
+      <td>0.116290</td>
+      <td>00:51</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.348923</td>
+      <td>0.203416</td>
+      <td>0.067275</td>
+      <td>00:50</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.207750</td>
+      <td>0.132006</td>
+      <td>0.037001</td>
+      <td>00:50</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.140231</td>
+      <td>0.124632</td>
+      <td>0.035079</td>
+      <td>00:50</td>
+    </tr>
+  </tbody>
+</table>
+<p>好像效果也没很大的提升:(</p>
+
+
+<h3 class="relative group">应用测试时间增强<code>Test time augmentation</code>（TTA） 
+    <div id="%E5%BA%94%E7%94%A8%E6%B5%8B%E8%AF%95%E6%97%B6%E9%97%B4%E5%A2%9E%E5%BC%BAtest-time-augmentationtta" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%BA%94%E7%94%A8%E6%B5%8B%E8%AF%95%E6%97%B6%E9%97%B4%E5%A2%9E%E5%BC%BAtest-time-augmentationtta" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>During inference or validation, creating multiple versions of each image, using data augmentation, and then taking the average or maximum of the predictions for each augmented version of the image.
+在推理或验证期间，使用数据增强创建每个图像的多个版本，然后对图像的每个增强版本取预测的平均值或最大值。</p></blockquote>
+<p>由上面的训练可知在没有TTA的情况下错误率是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">valid</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">valid</span>
+</span></span><span class="line"><span class="cl"><span class="n">preds</span><span class="p">,</span><span class="n">targs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">error_rate</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>TensorBase(0.0351)</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tta_preds</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">tta</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">valid</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">error_rate</span><span class="p">(</span><span class="n">tta_preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>TensorBase(0.0332)</p></blockquote>
+<p>错误率有降低！</p>
+
+
+<h3 class="relative group">将<code>ConvNext</code>应用的规模扩大 
+    <div id="%E5%B0%86convnext%E5%BA%94%E7%94%A8%E7%9A%84%E8%A7%84%E6%A8%A1%E6%89%A9%E5%A4%A7" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%B0%86convnext%E5%BA%94%E7%94%A8%E7%9A%84%E8%A7%84%E6%A8%A1%E6%89%A9%E5%A4%A7" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">trn_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_images&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="n">item</span><span class="o">=</span><span class="n">Resize</span><span class="p">((</span><span class="mi">480</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="n">ResizeMethod</span><span class="o">.</span><span class="n">Pad</span><span class="p">,</span> <span class="n">pad_mode</span><span class="o">=</span><span class="n">PadMode</span><span class="o">.</span><span class="n">Zeros</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">              <span class="n">batch</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span><span class="mi">192</span><span class="p">),</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">))</span>
+</span></span></code></pre></div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.097865</td>
+      <td>0.666030</td>
+      <td>0.218645</td>
+      <td>01:10</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.530017</td>
+      <td>0.320848</td>
+      <td>0.103316</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.399917</td>
+      <td>0.254228</td>
+      <td>0.077367</td>
+      <td>01:28</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.354157</td>
+      <td>0.281102</td>
+      <td>0.087938</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.306803</td>
+      <td>0.235106</td>
+      <td>0.074003</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.222612</td>
+      <td>0.154293</td>
+      <td>0.043248</td>
+      <td>01:28</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0.158987</td>
+      <td>0.174899</td>
+      <td>0.046612</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0.127389</td>
+      <td>0.122164</td>
+      <td>0.035079</td>
+      <td>01:28</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0.089526</td>
+      <td>0.120237</td>
+      <td>0.030754</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0.070281</td>
+      <td>0.117129</td>
+      <td>0.032196</td>
+      <td>01:28</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>0.052415</td>
+      <td>0.094729</td>
+      <td>0.024507</td>
+      <td>01:27</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.044216</td>
+      <td>0.091565</td>
+      <td>0.024027</td>
+      <td>01:28</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>0.034039</td>
+      <td>0.091716</td>
+      <td>0.023546</td>
+      <td>01:28</td>
+    </tr>
+  </tbody>
+</table>
+<p>应用<code>tta</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tta_preds</span><span class="p">,</span><span class="n">targs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">tta</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">valid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">error_rate</span><span class="p">(</span><span class="n">tta_preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>TensorBase(0.0226)</p></blockquote>
+<p>可以看到是降低了损失率的</p>
+
+
+<h3 class="relative group">将<code>ConvNext</code>应用到测试集上 
+    <div id="%E5%B0%86convnext%E5%BA%94%E7%94%A8%E5%88%B0%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%B0%86convnext%E5%BA%94%E7%94%A8%E5%88%B0%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tst_files</span> <span class="o">=</span> <span class="n">get_image_files</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;test_images&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sorted</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">tst_dl</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">test_dl</span><span class="p">(</span><span class="n">tst_files</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">preds</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">tta</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">tst_dl</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">idxs</span> <span class="o">=</span> <span class="n">preds</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>使用<code>PyTorch</code> 中的 <code>argmax</code>来选取出最大概率所在的标签，<code>dim=1</code>即沿类别维度（每行）计算，返回每个样本预测概率最高的类别索引</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">vocab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span> <span class="c1"># 使用vocab映射</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="n">idxs</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;idxs&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>在 <code>fastai</code> 中，<code>learn.dls.vocab</code> 是数据加载器 (DataLoaders) 的类别标签列表，用于将模型输出的预测索引（数字）映射回可读的类别名称（如字符串）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;sample_submission.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ss</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span>
+</span></span><span class="line"><span class="cl"><span class="n">ss</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;subm2.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">head</span> <span class="n">subm2</span><span class="o">.</span><span class="n">csv</span>
+</span></span></code></pre></div><blockquote>
+<p>image_id,label
+200001.jpg,hispa
+200002.jpg,normal
+200003.jpg,blast
+200004.jpg,blast
+200005.jpg,blast
+200006.jpg,brown_spot
+200007.jpg,dead_heart
+200008.jpg,brown_spot
+200009.jpg,hispa</p></blockquote>
+
+
+<h2 class="relative group">创建多输出的模型 
+    <div id="%E5%88%9B%E5%BB%BA%E5%A4%9A%E8%BE%93%E5%87%BA%E7%9A%84%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E8%BE%93%E5%87%BA%E7%9A%84%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">创建模型准备 
+    <div id="%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9E%8B%E5%87%86%E5%A4%87" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9E%8B%E5%87%86%E5%A4%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;train.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;image_id&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</span></span></code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>variety</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>image_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100330.jpg</th>
+      <td>bacterial_leaf_blight</td>
+      <td>ADT45</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>100365.jpg</th>
+      <td>bacterial_leaf_blight</td>
+      <td>ADT45</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>100382.jpg</th>
+      <td>bacterial_leaf_blight</td>
+      <td>ADT45</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>100632.jpg</th>
+      <td>bacterial_leaf_blight</td>
+      <td>ADT45</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>101918.jpg</th>
+      <td>bacterial_leaf_blight</td>
+      <td>ADT45</td>
+      <td>45</td>
+    </tr>
+  </tbody>
+</table>
+<p>我们让<code>image_id</code>作为索引，方便查找</p>
+<p><code>DataBlock</code>使用 <code>get_image_files </code>来获取训练图像列表，该列表返回 <code>Path</code> 对象，而如果要查找某个项目以获取其种类，我们需要传递其 <code>name </code>。这是一个执行此操作的函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_variety</span><span class="p">(</span><span class="n">p</span><span class="p">):</span> <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;variety&#39;</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span><span class="n">CategoryBlock</span><span class="p">,</span><span class="n">CategoryBlock</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n_inp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">get_items</span><span class="o">=</span><span class="n">get_image_files</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">get_y</span> <span class="o">=</span> <span class="p">[</span><span class="n">parent_label</span><span class="p">,</span><span class="n">get_variety</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">splitter</span><span class="o">=</span><span class="n">RandomSplitter</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">item_tfms</span><span class="o">=</span><span class="n">Resize</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;squish&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">batch_tfms</span><span class="o">=</span><span class="n">aug_transforms</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="o">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">trn_path</span><span class="p">)</span>
+</span></span></code></pre></div><p>使用 <code>DataBlock API</code>，这是一种灵活且方便的方式，可以将数据处理管道的各个部分连接在一起
+<code>DataBlock</code> 将从每个文件中创建 3 个内容：一个图像（文件的内容）和 2 个分类变量（疾病和品种）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">(</span><span class="n">max_n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../output_86_0.png" alt="png" />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">定义多输出的学习模型 
+    <div id="%E5%AE%9A%E4%B9%89%E5%A4%9A%E8%BE%93%E5%87%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%9A%E4%B9%89%E5%A4%9A%E8%BE%93%E5%87%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>多输出的关键的区别在于，我们的指标和损失现在将接收三个东西而不是两个：模型输出（即指标和损失函数输入）和两个目标（疾病和多样性）。因此，我们需要重新定义指标（ error_rate ）和损失函数（ cross_entropy ），以传递 disease 目标：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arch</span> <span class="o">=</span> <span class="s1">&#39;convnext_small_in22k&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">lr</span> <span class="o">=</span> <span class="mf">0.01</span>
+</span></span></code></pre></div><p>为了预测每种疾病和每种疾病的概率，我们现在需要模型输出一个长度为 20 的张量，因为有 10 种可能的疾病和 10 种可能的疾病。我们可以通过设置 <code>n_out=20</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">vision_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">to_fp16</span><span class="p">()</span>
+</span></span></code></pre></div><p>因为要预测两个输出了，之前的损失函数是只针对疾病的，在这里损失函数使用的是<code>cross_entropy</code>即交叉熵损失函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">disease_loss</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">):</span> <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">inp</span><span class="p">[:,:</span><span class="mi">10</span><span class="p">],</span><span class="n">disease</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">variety_loss</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">):</span> <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">inp</span><span class="p">[:,</span><span class="mi">10</span><span class="p">:],</span><span class="n">variety</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">combine_loss</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">):</span><span class="k">return</span> <span class="n">disease_loss</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">)</span><span class="o">+</span><span class="n">variety_loss</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">disease_err</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">):</span> <span class="k">return</span> <span class="n">error_rate</span><span class="p">(</span><span class="n">inp</span><span class="p">[:,:</span><span class="mi">10</span><span class="p">],</span><span class="n">disease</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">variety_err</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span><span class="n">disease</span><span class="p">,</span><span class="n">variety</span><span class="p">):</span> <span class="k">return</span> <span class="n">error_rate</span><span class="p">(</span><span class="n">inp</span><span class="p">[:,</span><span class="mi">10</span><span class="p">:],</span><span class="n">variety</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">err_metrics</span> <span class="o">=</span> <span class="p">(</span><span class="n">disease_err</span><span class="p">,</span><span class="n">variety_err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">all_metrics</span> <span class="o">=</span> <span class="n">err_metrics</span><span class="o">+</span><span class="p">(</span><span class="n">disease_loss</span><span class="p">,</span><span class="n">variety_loss</span><span class="p">)</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">多输出模型训练 
+    <div id="%E5%A4%9A%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%A4%9A%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">vision_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">arch</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">combine_loss</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">all_metrics</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">to_fp16</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+</span></span></code></pre></div><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>disease_err</th>
+      <th>variety_err</th>
+      <th>disease_loss</th>
+      <th>variety_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>2.276296</td>
+      <td>1.189668</td>
+      <td>0.257088</td>
+      <td>0.128304</td>
+      <td>0.783521</td>
+      <td>0.406147</td>
+      <td>00:51</td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>disease_err</th>
+      <th>variety_err</th>
+      <th>disease_loss</th>
+      <th>variety_loss</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.005188</td>
+      <td>0.580068</td>
+      <td>0.127823</td>
+      <td>0.059106</td>
+      <td>0.387363</td>
+      <td>0.192705</td>
+      <td>00:54</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.757706</td>
+      <td>0.387292</td>
+      <td>0.094666</td>
+      <td>0.036040</td>
+      <td>0.280007</td>
+      <td>0.107285</td>
+      <td>00:53</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.477868</td>
+      <td>0.262185</td>
+      <td>0.061509</td>
+      <td>0.022585</td>
+      <td>0.193384</td>
+      <td>0.068801</td>
+      <td>00:54</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.269435</td>
+      <td>0.171966</td>
+      <td>0.040846</td>
+      <td>0.009611</td>
+      <td>0.134649</td>
+      <td>0.037317</td>
+      <td>00:54</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.200365</td>
+      <td>0.163008</td>
+      <td>0.037963</td>
+      <td>0.009130</td>
+      <td>0.124750</td>
+      <td>0.038258</td>
+      <td>00:53</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="relative group">添加<code>softmax</code>并查看输出结果 
+    <div id="%E6%B7%BB%E5%8A%A0softmax%E5%B9%B6%E6%9F%A5%E7%9C%8B%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%B7%BB%E5%8A%A0softmax%E5%B9%B6%E6%9F%A5%E7%9C%8B%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获取验证集的预测</span>
+</span></span><span class="line"><span class="cl"><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">valid</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">))</span>
+</span></span></code></pre></div><blockquote>
+<p>[[&lsquo;bacterial_leaf_blight&rsquo;, &lsquo;bacterial_leaf_streak&rsquo;, &lsquo;bacterial_panicle_blight&rsquo;, &lsquo;blast&rsquo;, &lsquo;brown_spot&rsquo;, &lsquo;dead_heart&rsquo;, &lsquo;downy_mildew&rsquo;, &lsquo;hispa&rsquo;, &rsquo;normal&rsquo;, &rsquo;tungro&rsquo;], [&lsquo;ADT45&rsquo;, &lsquo;AndraPonni&rsquo;, &lsquo;AtchayaPonni&rsquo;, &lsquo;IR20&rsquo;, &lsquo;KarnatakaPonni&rsquo;, &lsquo;Onthanel&rsquo;, &lsquo;Ponni&rsquo;, &lsquo;RR&rsquo;, &lsquo;Surya&rsquo;, &lsquo;Zonal&rsquo;]]
+2</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 疾病类别有10个，品种类别也有10个</span>
+</span></span><span class="line"><span class="cl"><span class="n">num_classes_disease</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 10</span>
+</span></span><span class="line"><span class="cl"><span class="n">num_classes_variety</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 10</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获取验证集的预测</span>
+</span></span><span class="line"><span class="cl"><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span> <span class="o">=</span> <span class="n">learn</span><span class="o">.</span><span class="n">get_preds</span><span class="p">(</span><span class="n">dl</span><span class="o">=</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">valid</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 划分疾病和品种的预测结果</span>
+</span></span><span class="line"><span class="cl"><span class="n">disease_preds</span> <span class="o">=</span> <span class="n">preds</span><span class="p">[:,</span> <span class="p">:</span><span class="n">num_classes_disease</span><span class="p">]</span>  <span class="c1"># 获取第一部分，即疾病的预测</span>
+</span></span><span class="line"><span class="cl"><span class="n">variety_preds</span> <span class="o">=</span> <span class="n">preds</span><span class="p">[:,</span> <span class="n">num_classes_disease</span><span class="p">:]</span>    <span class="c1"># 获取第二部分，即品种的预测</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 softmax 计算概率</span>
+</span></span><span class="line"><span class="cl"><span class="n">disease_probabilities</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">disease_preds</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">variety_probabilities</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">variety_preds</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取分类的最大概率对应的类别索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">predicted_disease_classes</span> <span class="o">=</span> <span class="n">disease_probabilities</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 找出疾病类别的预测</span>
+</span></span><span class="line"><span class="cl"><span class="n">predicted_variety_classes</span> <span class="o">=</span> <span class="n">variety_probabilities</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 找出品种类别的预测</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 映射类别索引回实际标签</span>
+</span></span><span class="line"><span class="cl"><span class="n">predicted_disease_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="n">predicted_disease_classes</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">predicted_variety_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">learn</span><span class="o">.</span><span class="n">dls</span><span class="o">.</span><span class="n">vocab</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="n">predicted_variety_classes</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看部分预测结果</span>
+</span></span><span class="line"><span class="cl"><span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Predicted Disease&#39;</span><span class="p">:</span> <span class="n">predicted_disease_labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span>  <span class="c1"># 前10个的预测疾病</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Predicted Variety&#39;</span><span class="p">:</span> <span class="n">predicted_variety_labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span>  <span class="c1"># 前10个的预测品种</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">results_df</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>Predicted Disease</th>
+          <th>Predicted Variety</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>blast</td>
+          <td>AndraPonni</td>
+      </tr>
+      <tr>
+          <td>normal</td>
+          <td>RR</td>
+      </tr>
+      <tr>
+          <td>tungro</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>bacterial_leaf_streak</td>
+          <td>KarnatakaPonni</td>
+      </tr>
+      <tr>
+          <td>dead_heart</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>tungro</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>normal</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>normal</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>brown_spot</td>
+          <td>ADT45</td>
+      </tr>
+      <tr>
+          <td>bacterial_leaf_blight</td>
+          <td>ADT45</td>
+      </tr>
+  </tbody>
+</table></blockquote>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        fastai course learning  - 这篇文章属于一个选集。
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/">
+            § 1: Create Neural Net From Scratch
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        § 2: 本文
+    </div>
+    
+    
+
+
+</details>
+
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\\deeplearning\\learning-based-PaddyDiseaseClassification.md"
+        var oid_likes = "likes_posts\\deeplearning\\learning-based-PaddyDiseaseClassification.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/algorithm/%E5%93%88%E5%B8%8C/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >哈希</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-03-26T20:48:50&#43;08:00">26 March 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部" title="返回顶部">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      Sothebylin
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://sothebylin.github.io/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

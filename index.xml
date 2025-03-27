@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Sothebylin</copyright>
-    <lastBuildDate>Wed, 26 Mar 2025 20:48:50 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Mar 2025 15:23:05 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Learning Based Paddy_Disease_Classification</title>
+      <link>https://sothebylin.github.io/posts/deeplearning/learning-based-paddydiseaseclassification/</link>
+      <pubDate>Thu, 27 Mar 2025 15:23:05 +0800</pubDate>
+      
+      <guid>https://sothebylin.github.io/posts/deeplearning/learning-based-paddydiseaseclassification/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>哈希</title>
@@ -51,10 +61,10 @@
     
     <item>
       <title>Create Neural Net From Scratch</title>
-      <link>https://sothebylin.github.io/posts/create-neural-net-from-scratch/</link>
+      <link>https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/</link>
       <pubDate>Mon, 24 Mar 2025 21:37:38 +0800</pubDate>
       
-      <guid>https://sothebylin.github.io/posts/create-neural-net-from-scratch/</guid>
+      <guid>https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/</guid>
       <description></description>
       
     </item>
