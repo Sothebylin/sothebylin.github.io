@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Learning Based Paddy_Disease_Classification &middot; 春日汀</title>
-  <meta name="title" content="Learning Based Paddy_Disease_Classification &middot; 春日汀" />
+  <title>Learning NN Based Paddy_Disease_Classification &middot; 春日汀</title>
+  <meta name="title" content="Learning NN Based Paddy_Disease_Classification &middot; 春日汀" />
   
   <meta name="description" content="learning follow https://course.fast.ai/ " />
   
@@ -66,18 +66,19 @@
   
   <meta property="og:url" content="https://sothebylin.github.io/posts/deeplearning/learning-based-paddydiseaseclassification/">
   <meta property="og:site_name" content="春日汀">
-  <meta property="og:title" content="Learning Based Paddy_Disease_Classification">
+  <meta property="og:title" content="Learning NN Based Paddy_Disease_Classification">
   <meta property="og:description" content="learning follow https://course.fast.ai/">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-03-27T15:23:05+08:00">
     <meta property="article:modified_time" content="2025-03-27T15:23:05+08:00">
+      <meta property="og:see_also" content="https://sothebylin.github.io/posts/deeplearning/learning-pytorch-based-collaborative-filtering/">
       <meta property="og:see_also" content="https://sothebylin.github.io/posts/deeplearning/create-neural-net-from-scratch/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Learning Based Paddy_Disease_Classification">
+  <meta name="twitter:title" content="Learning NN Based Paddy_Disease_Classification">
   <meta name="twitter:description" content="learning follow https://course.fast.ai/">
 
   
@@ -86,8 +87,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Learning Based Paddy_Disease_Classification",
-    "headline": "Learning Based Paddy_Disease_Classification",
+    "name": "Learning NN Based Paddy_Disease_Classification",
+    "headline": "Learning NN Based Paddy_Disease_Classification",
     "description": "learning follow https:\/\/course.fast.ai\/ ",
     
     "inLanguage": "zh-cn",
@@ -105,7 +106,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3289"
+    "wordCount": "3303"
   }]
   </script>
 
@@ -496,7 +497,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Learning Based Paddy_Disease_Classification
+      Learning NN Based Paddy_Disease_Classification
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -541,7 +542,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-27T15:23:05&#43;08:00">27 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3289 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
+  <time datetime="2025-03-27T15:23:05&#43;08:00">27 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3303 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
   
 
   
@@ -655,7 +656,7 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#setup">Setup</a></li>
+    <li><a href="#准备阶段">准备阶段</a></li>
     <li><a href="#采用resnet26d训练">采用<code>Resnet26d</code>训练</a>
       <ul>
         <li><a href="#定义学习模型并查找学习率">定义学习模型并查找学习率</a></li>
@@ -695,7 +696,7 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#setup">Setup</a></li>
+    <li><a href="#准备阶段">准备阶段</a></li>
     <li><a href="#采用resnet26d训练">采用<code>Resnet26d</code>训练</a>
       <ul>
         <li><a href="#定义学习模型并查找学习率">定义学习模型并查找学习率</a></li>
@@ -786,6 +787,15 @@
     </div>
     
     
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://sothebylin.github.io/posts/deeplearning/learning-pytorch-based-collaborative-filtering/">
+            § 3: Learning Pytorch Based Collaborative Filtering
+        </a>
+    </div>
+    
+    
 
 
 </details>
@@ -812,13 +822,13 @@
 <p>本篇博客是在fastai课程基础上进行总结，基于kaggle上的paddy disease classificatin比赛，使用了Resnet框架和Convnext框架实现对疾病的分类，结果发现Convnext比Resnext效果更好，并且使用了测试时间增强（TTA）、扩大训练规模、对图像进行填充等方式探究降低误差的效果，最后还构建了多输出模型，输出疾病以及种类。</p></blockquote>
 
 
-<h2 class="relative group">Setup 
-    <div id="setup" class="anchor"></div>
+<h2 class="relative group">准备阶段 
+    <div id="%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#setup" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5" aria-label="锚点">#</a>
     </span>        
     
 </h2>
@@ -1111,33 +1121,33 @@ Name: count, dtype: int64</p></blockquote>
 </span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">idxs</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;idxs&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">results</span>
 </span></span></code></pre></div><blockquote>
-<p>0                       hispa
-1                      normal
-2                  brown_spot
-3                       blast
-4                       blast
-&hellip;       <br>
-3464               dead_heart
-3465                    hispa
-3466                   normal
-3467    bacterial_leaf_streak
-3468               dead_heart
-Name: idxs, Length: 3469, dtype: object</p></blockquote>
+<p>0                       hispa</p>
+<p>1                      normal</p>
+<p>2                  brown_spot</p>
+<p>3                       blast</p>
+<p>4                       blast</p>
+<p>​             &hellip;       <br>
+3464               dead_heart</p>
+<p>3465                    hispa</p>
+<p>3466                   normal</p>
+<p>3467    bacterial_leaf_streak</p>
+<p>3468               dead_heart</p>
+<p>Name: idxs, Length: 3469, dtype: object</p></blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;sample_submission.csv&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ss</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span>
 </span></span><span class="line"><span class="cl"><span class="n">ss</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;subm.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">head</span> <span class="n">subm</span><span class="o">.</span><span class="n">csv</span>
 </span></span></code></pre></div><blockquote>
-<p>image_id,label
-200001.jpg,hispa
-200002.jpg,normal
-200003.jpg,brown_spot
-200004.jpg,blast
-200005.jpg,blast
-200006.jpg,brown_spot
-200007.jpg,dead_heart
-200008.jpg,brown_spot
-200009.jpg,hispa</p></blockquote>
+<p>image_id, label</p>
+<p>200001.jpg, hispa</p>
+<p>200002.jpg, normal</p>
+<p>200003.jpg, brown_spot</p>
+<p>200004.jpg, blast</p>
+<p>200005.jpg, blast</p>
+<p>200006.jpg, brown_spot</p>
+<p>200007.jpg, dead_heart</p>
+<p>200008.jpg, brown_spot</p>
+<p>200009.jpg, hispa</p></blockquote>
 
 
 <h3 class="relative group">改进一下<code>Resnet26d</code> 
@@ -2013,6 +2023,15 @@ Name: idxs, Length: 3469, dtype: object</p></blockquote>
     </div>
     
     
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://sothebylin.github.io/posts/deeplearning/learning-pytorch-based-collaborative-filtering/">
+            § 3: Learning Pytorch Based Collaborative Filtering
+        </a>
+    </div>
+    
+    
 
 
 </details>
@@ -2075,6 +2094,28 @@ Name: idxs, Length: 3469, dtype: object</p></blockquote>
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/deeplearning/learning-pytorch-based-collaborative-filtering/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Learning Pytorch Based Collaborative Filtering</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-03-28T21:09:38&#43;08:00">28 March 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>
