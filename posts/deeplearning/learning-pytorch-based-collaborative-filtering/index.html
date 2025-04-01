@@ -106,7 +106,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3324"
+    "wordCount": "3354"
   }]
   </script>
 
@@ -542,7 +542,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-28T21:09:38&#43;08:00">28 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3324 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
+  <time datetime="2025-03-28T21:09:38&#43;08:00">28 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3354 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
   
 
   
@@ -1144,6 +1144,13 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">users</span> <span class="o">*</span> <span class="n">movies</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#向量的逐元素相乘后求和</span>
 </span></span></code></pre></div><p>嵌入层<code>Embedding</code>是一种将高维稀疏的独热编码向量映射到低维密集向量的方法。它通过学习一个嵌入矩阵<code>Embedding Matrix</code>，将每个类别映射到一个低维空间中的向量。</p>
 <p>嵌入层的工作方式是通过矩阵乘法来达到查找嵌入矩阵<code>E</code>中的行来获取嵌入向量的效果,这里创建两个嵌入矩阵<code>user_factors </code>和 <code>movie_factors</code>分别表示用户和电影的潜在特征<code>latent factors</code></p>
+<p>关于embedding是如何对应到索引的，博主举例画图来理解</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../embedding.jpg" alt="" />
+      
+    </figure>
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">dls</span><span class="o">.</span><span class="n">one_batch</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 </span></span></code></pre></div><blockquote>
@@ -1397,19 +1404,25 @@
 </span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_bias</span><span class="p">[</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">movie_bias</span><span class="p">[</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]]</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">sigmoid_range</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">y_range</span><span class="p">)</span>
 </span></span></code></pre></div><ul>
-<li><code>x</code> 是一个二维张量，形状为 (batch_size, 2)，其中每一行包含一个用户 ID 和一个电影 ID。</li>
-<li><code>self.user_factors[x[:, 0]]</code> 和 <code>self.movie_factors[x[:, 1]]</code> 分别获取用户和电影的潜在特征向量。<code>self.user_factors[x[:, 0]]</code> 会根据<code>x[:, 0]</code>从 <code>self.user_factors</code> 中提取对应的嵌入向量。结果是一个二维张量，形状为 <code>[batch_size, n_factors]</code>。</li>
-<li><code>(users * movies).sum(dim=1)</code> 计算用户和电影潜在特征向量的点积。</li>
-<li><code>self.user_bias[x[:, 0]]</code> 和 <code>self.movie_bias[x[:, 1]]</code> 分别获取用户和电影的偏置项。</li>
-<li><code>res += self.user_bias[x[:, 0]] + self.movie_bias[x[:, 1]]</code> 将偏置项加到点积结果上。</li>
-<li><code>sigmoid_range(res, *self.y_range)</code> 将结果映射到指定的范围内。</li>
+<li>
+<p><code>x</code> 是一个二维张量，形状为 (batch_size, 2)，其中每一行包含一个用户 ID 和一个电影 ID。</p>
+</li>
+<li>
+<p><code>self.user_factors[x[:, 0]]</code> 和 <code>self.movie_factors[x[:, 1]]</code> 分别获取用户和电影的潜在特征向量。<code>self.user_factors[x[:, 0]]</code> 会根据<code>x[:, 0]</code>从 <code>self.user_factors</code> 中提取对应的嵌入向量。结果是一个二维张量，形状为 <code>[batch_size, n_factors]</code>。</p>
+</li>
+<li>
+<p><code>(users * movies).sum(dim=1)</code> 计算用户和电影潜在特征向量的点积。</p>
+</li>
+<li>
+<p><code>self.user_bias[x[:, 0]]</code> 和 <code>self.movie_bias[x[:, 1]]</code> 分别获取用户和电影的偏置项。</p>
+</li>
+<li>
+<p><code>res += self.user_bias[x[:, 0]] + self.movie_bias[x[:, 1]]</code> 将偏置项加到点积结果上。</p>
+</li>
+<li>
+<p><code>sigmoid_range(res, *self.y_range)</code> 将结果映射到指定的范围内。</p>
+</li>
 </ul>
-<p>
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="../embedding" alt="" />
-      
-    </figure>
-</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">DotProductBias</span><span class="p">(</span><span class="n">n_users</span><span class="p">,</span> <span class="n">n_movies</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">MSELossFlat</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5e-3</span><span class="p">,</span> <span class="n">wd</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
@@ -1818,6 +1831,28 @@
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >单调栈&单调队列</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-03-29T10:38:24&#43;08:00">29 March 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>

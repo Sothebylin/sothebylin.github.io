@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>哈希 &middot; 春日汀</title>
-  <meta name="title" content="哈希 &middot; 春日汀" />
+  <title>单调栈&单调队列 &middot; 春日汀</title>
+  <meta name="title" content="单调栈&单调队列 &middot; 春日汀" />
   
-  <meta name="description" content="Welcom Sothebylin&#39;s website" />
+  <meta name="description" content="&lt;font color=#0000FF&gt;Test&lt;/font&gt;" />
   
   
   
-  <link rel="canonical" href="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/" />
+  <link rel="canonical" href="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/" />
   
   
   
@@ -64,25 +64,25 @@
   
   
   
-  <meta property="og:url" content="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
+  <meta property="og:url" content="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
   <meta property="og:site_name" content="春日汀">
-  <meta property="og:title" content="哈希">
-  <meta property="og:description" content="Welcom Sothebylin&#39;s website">
+  <meta property="og:title" content="单调栈&单调队列">
+  <meta property="og:description" content="Test">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-26T20:48:50+08:00">
-    <meta property="article:modified_time" content="2025-03-26T20:48:50+08:00">
+    <meta property="article:published_time" content="2025-03-29T10:38:24+08:00">
+    <meta property="article:modified_time" content="2025-03-29T10:38:24+08:00">
       <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-2/">
       <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
+      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
       <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
       <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="哈希">
-  <meta name="twitter:description" content="Welcom Sothebylin&#39;s website">
+  <meta name="twitter:title" content="单调栈&单调队列">
+  <meta name="twitter:description" content="Test">
 
   
   <script type="application/ld+json">
@@ -90,26 +90,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "哈希",
-    "headline": "哈希",
-    
+    "name": "单调栈\u0026单调队列",
+    "headline": "单调栈\u0026单调队列",
+    "description": "\u003cfont color=#0000FF\u003eTest\u003c\/font\u003e",
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/sothebylin.github.io\/posts\/algorithm\/%E5%93%88%E5%B8%8C\/",
+    "url" : "https:\/\/sothebylin.github.io\/posts\/algorithm\/%E5%8D%95%E8%B0%83%E6%A0%88\/",
     "author" : {
       "@type": "Person",
       "name": "Sothebylin"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-03-26T20:48:50\u002b08:00",
-    "datePublished": "2025-03-26T20:48:50\u002b08:00",
+    "dateCreated": "2025-03-29T10:38:24\u002b08:00",
+    "datePublished": "2025-03-29T10:38:24\u002b08:00",
     
-    "dateModified": "2025-03-26T20:48:50\u002b08:00",
+    "dateModified": "2025-03-29T10:38:24\u002b08:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "608"
+    "wordCount": "1256"
   }]
   </script>
 
@@ -500,7 +500,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      哈希
+      单调栈&单调队列
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -545,7 +545,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-26T20:48:50&#43;08:00">26 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>608 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+  <time datetime="2025-03-29T10:38:24&#43;08:00">29 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1256 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span>
   
 
   
@@ -659,19 +659,20 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#两数之和"><a href="https://leetcode.cn/problems/two-sum/">两数之和</a></a>
+    <li><a href="#leetcode例题739每日温度">【Leetcode】例题—<a href="https://leetcode.cn/problems/daily-temperatures/description/">739每日温度</a></a>
       <ul>
-        <li><a href="#题目描述">题目描述</a></li>
-        <li><a href="#ac代码代码随想录">AC代码(<a href="https://www.programmercarl.com/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">代码随想录</a>)</a></li>
+        <li><a href="#过程分析">过程分析</a></li>
+        <li><a href="#模板代码">模板代码</a></li>
       </ul>
     </li>
-    <li><a href="#p1102-a-b-数对">P1102 A-B 数对</a>
+    <li><a href="#蓝桥杯题库54461-最大区间">【蓝桥杯题库】54461. 最大区间</a>
       <ul>
+        <li><a href="#问题描述">问题描述</a></li>
         <li><a href="#输入格式">输入格式</a></li>
         <li><a href="#输出格式">输出格式</a></li>
-        <li><a href="#输入">输入</a></li>
-        <li><a href="#输出">输出</a></li>
-        <li><a href="#说明提示">说明/提示</a></li>
+        <li><a href="#样例输入">样例输入</a></li>
+        <li><a href="#样例输出">样例输出</a></li>
+        <li><a href="#错误思路">错误思路</a></li>
         <li><a href="#ac代码">AC代码</a></li>
       </ul>
     </li>
@@ -688,19 +689,20 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#两数之和"><a href="https://leetcode.cn/problems/two-sum/">两数之和</a></a>
+    <li><a href="#leetcode例题739每日温度">【Leetcode】例题—<a href="https://leetcode.cn/problems/daily-temperatures/description/">739每日温度</a></a>
       <ul>
-        <li><a href="#题目描述">题目描述</a></li>
-        <li><a href="#ac代码代码随想录">AC代码(<a href="https://www.programmercarl.com/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE">代码随想录</a>)</a></li>
+        <li><a href="#过程分析">过程分析</a></li>
+        <li><a href="#模板代码">模板代码</a></li>
       </ul>
     </li>
-    <li><a href="#p1102-a-b-数对">P1102 A-B 数对</a>
+    <li><a href="#蓝桥杯题库54461-最大区间">【蓝桥杯题库】54461. 最大区间</a>
       <ul>
+        <li><a href="#问题描述">问题描述</a></li>
         <li><a href="#输入格式">输入格式</a></li>
         <li><a href="#输出格式">输出格式</a></li>
-        <li><a href="#输入">输入</a></li>
-        <li><a href="#输出">输出</a></li>
-        <li><a href="#说明提示">说明/提示</a></li>
+        <li><a href="#样例输入">样例输入</a></li>
+        <li><a href="#样例输出">样例输出</a></li>
+        <li><a href="#错误思路">错误思路</a></li>
         <li><a href="#ac代码">AC代码</a></li>
       </ul>
     </li>
@@ -764,7 +766,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        <a href="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
+            § 2: 哈希
+        </a>
     </div>
     
     
@@ -780,9 +784,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
-            § 4: 单调栈&amp;单调队列
-        </a>
+        § 4: 本文
     </div>
     
     
@@ -813,13 +815,13 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h1 class="relative group">哈希 
-    <div id="%E5%93%88%E5%B8%8C" class="anchor"></div>
+<h1 class="relative group">单调栈 
+    <div id="%E5%8D%95%E8%B0%83%E6%A0%88" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%93%88%E5%B8%8C" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%8D%95%E8%B0%83%E6%A0%88" aria-label="锚点">#</a>
     </span>        
     
 </h1>
@@ -827,72 +829,123 @@
 <p>本系列的大部分都是对<a href="https://labuladong.online/algo/home/" target="_blank"><strong>labuladong</strong></a>和<a href="https://www.programmercarl.com/" target="_blank"><strong>代码随想录</strong></a>网站的题目的练手汇总(部分是博主自己结合leetcode和洛谷题目的补充）初衷是博主自用学习哒!</p></blockquote>
 <blockquote>
 <p>请所有阅读这系列博客的友友先移步阅览他们的网站，没有这些优秀网站的分享不会有这系列的文章，我只是知识的搬运工！</p></blockquote>
+<p><font color=\\#9ACD32>“一维数组，要寻找任一个元素的右边或者左边第一个比自己大或者小的元素的位置，就可以考虑使用单调栈“——<a href="https://www.programmercarl.com/0739.%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6.html#%E6%80%9D%E8%B7%AF" target="_blank">代码随想录</a></font></p>
+<p>（二分也能实现，但是二分的前提是有序数组</p>
 
 
-<h2 class="relative group"><a href="https://leetcode.cn/problems/two-sum/" target="_blank">两数之和</a> 
-    <div id="%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C" class="anchor"></div>
+<h2 class="relative group">【Leetcode】例题—<a href="https://leetcode.cn/problems/daily-temperatures/description/" target="_blank">739每日温度</a> 
+    <div id="leetcode%E4%BE%8B%E9%A2%98739%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#leetcode%E4%BE%8B%E9%A2%98739%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6" aria-label="锚点">#</a>
     </span>        
     
 </h2>
+<p>给定一个整数数组 <code>temperatures</code> ，表示每天的温度，返回一个数组 <code>answer</code> ，其中 <code>answer[i]</code> 是指对于第 <code>i</code> 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 <code>0</code> 来代替。</p>
+<p><strong>示例 1:</strong></p>
+<pre tabindex="0"><code>输入: temperatures = [73,74,75,71,69,72,76,73]
+输出: [1,1,4,2,1,1,0,0]
+</code></pre>
 
-
-<h3 class="relative group">题目描述 
-    <div id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" class="anchor"></div>
+<h3 class="relative group">过程分析 
+    <div id="%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。</p>
-<p>你可以按任意顺序返回答案。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../4-01.ipg" alt="" />
+      
+    </figure>
+</p>
 
 
-<h3 class="relative group">AC代码(<a href="https://www.programmercarl.com/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE" target="_blank">代码随想录</a>) 
-    <div id="ac%E4%BB%A3%E7%A0%81%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95" class="anchor"></div>
+<h3 class="relative group">模板代码 
+    <div id="%E6%A8%A1%E6%9D%BF%E4%BB%A3%E7%A0%81" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ac%E4%BB%A3%E7%A0%81%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A8%A1%E6%9D%BF%E4%BB%A3%E7%A0%81" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<p>搬运的代码随想录的<a href="https://www.programmercarl.com/0739.%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE" target="_blank">模板</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 版本一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">map</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">target</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">!=</span><span class="n">map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="k">return</span> <span class="p">{</span><span class="n">map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">,</span><span class="n">i</span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="n">map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">i</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">           
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dailyTemperatures</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 递增栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()])</span> <span class="p">{</span>                       <span class="c1">// 情况一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">T</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()])</span> <span class="p">{</span>               <span class="c1">// 情况二
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">T</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()])</span> <span class="p">{</span> <span class="c1">// 情况三
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">result</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>精简代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 版本二
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dailyTemperatures</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span> <span class="c1">// 递增栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">T</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()])</span> <span class="p">{</span> <span class="c1">// 注意栈不能为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">result</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">P1102 A-B 数对 
-    <div id="p1102-a-b-%E6%95%B0%E5%AF%B9" class="anchor"></div>
+<h2 class="relative group">【蓝桥杯题库】54461. 最大区间 
+    <div id="%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%9354461-%E6%9C%80%E5%A4%A7%E5%8C%BA%E9%97%B4" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#p1102-a-b-%E6%95%B0%E5%AF%B9" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%9354461-%E6%9C%80%E5%A4%A7%E5%8C%BA%E9%97%B4" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>给出一串正整数数列以及一个正整数<code>C</code>, 要求计算出所有满足 <code>A - B = C​</code> 的数对的个数（不同位置的数字一样的数对算不同的数对）。</p>
+
+
+<h3 class="relative group">问题描述 
+    <div id="%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>给定一个长度为 <code>n</code>的序列 <code>Ai</code>，求 <code>L</code>,<code>R</code> 使<code> (R−L+1)⋅min⁡(AL,AL+1,…,AR)</code> 尽可能大，其中<code> min</code>⁡ 表示最小值。</p>
+<p>你只需要输出最大的值即可，不需要输出具体的 <code>L</code>,<code>R</code>。</p>
 
 
 <h3 class="relative group">输入格式 
@@ -905,9 +958,8 @@
     </span>        
     
 </h3>
-<p>输入共两行。</p>
-<p>第一行，两个正整数 <code>N,C</code>。</p>
-<p>第二行，<code>N</code> 个正整数，作为要求处理的那串数。</p>
+<p>输入的第一行包含一个整数 <code>n</code>。</p>
+<p>第二行包含 <code>n</code>个整数，分别表示<code> A1</code>,<code>A2</code>,…,<code>An</code>相邻两个整数之间使用一个空格分隔。</p>
 
 
 <h3 class="relative group">输出格式 
@@ -920,51 +972,82 @@
     </span>        
     
 </h3>
-<p>一行，表示该串正整数中包含的满足 <code>A - B = C​</code> 的数对的个数。</p>
+<p>输出一行包含一个整数表示答案。</p>
 
 
-<h3 class="relative group">输入 
-    <div id="%E8%BE%93%E5%85%A5" class="anchor"></div>
+<h3 class="relative group">样例输入 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%85%A5" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<blockquote>
-<p>4 1
-1 1 2 3</p></blockquote>
+<pre tabindex="0"><code>5
+1 1 3 3 1
+</code></pre>
 
-
-<h3 class="relative group">输出 
-    <div id="%E8%BE%93%E5%87%BA" class="anchor"></div>
+<h3 class="relative group">样例输出 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%87%BA" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<blockquote>
-<p>3</p></blockquote>
+<pre tabindex="0"><code>6
+</code></pre><p>对于 <code>40%</code>评测用例，1≤<code>n</code>≤5000，1≤<code>Ai</code>≤5000；</p>
+<p>对于所有评测用例，1≤<code>n</code>≤3×10^5， 1≤<code>Ai</code>≤10^9。</p>
 
 
-<h3 class="relative group">说明/提示 
-    <div id="%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA" class="anchor"></div>
+<h3 class="relative group">错误思路 
+    <div id="%E9%94%99%E8%AF%AF%E6%80%9D%E8%B7%AF" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E9%94%99%E8%AF%AF%E6%80%9D%E8%B7%AF" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<p>对于 <code>75%</code>​ 的数据，​<code>1&lt; N &lt; 2000​</code>。</p>
-<p>对于<code>100%</code>的数据，<code>1 &lt; N &lt; 2×10^5​</code>，<code>0 &lt; a_i &lt; 2^30​</code>，<code>1 &lt; C &lt; 2^30​</code>。</p>
-
+<p>一开始就是简单的想去套模板，但是这与模板题不同的是，其实并不是纯粹的单调，每次入栈其实是和栈底比。（那这样还不如用滑动窗口了感觉&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="n">nums</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">stack</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="n">maxlen</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="o">&amp;&amp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">maxlen</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span><span class="o">=</span><span class="n">i</span><span class="o">-</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">res</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">maxlen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 
 <h3 class="relative group">AC代码 
     <div id="ac%E4%BB%A3%E7%A0%81" class="anchor"></div>
@@ -976,33 +1059,103 @@
     </span>        
     
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&gt;&gt;</span> <span class="n">C</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">freq</span><span class="p">;</span> <span class="c1">// 使用 int 作为频次类型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
-</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    	<span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">freq</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//注意结果是long long 因为res会累加 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="nl">x</span> <span class="p">:</span> <span class="n">nums</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">C</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">freq</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">!=</span> <span class="n">freq</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">+=</span> <span class="n">freq</span><span class="p">[</span><span class="n">target</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">nums</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">left</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 左边第一个比它小的元素的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">right</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// 右边第一个比它小的元素的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算 left
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span><span class="p">[</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="c1">//因为此时top停在的地方就是左边离nums[i]最近的大于等于其的索引 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算 maxlen
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">maxlen</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maxlen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">maxlen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>官方题解</p>
+<p>蓝桥杯官方是用的单调队列（但是它tag为什么是单调栈:(</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">LL</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">l</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">r</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">()]</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ios_base</span> <span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setiosflags</span><span class="p">(</span><span class="n">ios</span><span class="o">::</span><span class="n">fixed</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">solve</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
           
@@ -1033,7 +1186,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        <a href="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
+            § 2: 哈希
+        </a>
     </div>
     
     
@@ -1049,9 +1204,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
-            § 4: 单调栈&amp;单调队列
-        </a>
+        § 4: 本文
     </div>
     
     
@@ -1090,8 +1243,8 @@
           
         
       <script>
-        var oid = "views_posts\\algorithm\\哈希.md"
-        var oid_likes = "likes_posts\\algorithm\\哈希.md"
+        var oid = "views_posts\\algorithm\\单调栈.md"
+        var oid_likes = "likes_posts\\algorithm\\单调栈.md"
       </script>
       
       
@@ -1111,7 +1264,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
+            <a class="flex group mr-3" href="/posts/deeplearning/learning-pytorch-based-collaborative-filtering/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1123,11 +1276,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >回溯</span
+                  >Learning Pytorch Based Collaborative Filtering</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-03-26T20:41:34&#43;08:00">26 March 2025</time>
+                    <time datetime="2025-03-28T21:09:38&#43;08:00">28 March 2025</time>
                   
                 </span>
               </span>
@@ -1136,15 +1289,15 @@
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/deeplearning/learning-based-paddydiseaseclassification/">
+            <a class="flex text-right group ml-3" href="/posts/lanqiaocup/lanqiaocup2023-2/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Learning NN Based Paddy_Disease_Classification</span
+                  >Lanqiaocup2023-2</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-03-27T15:23:05&#43;08:00">27 March 2025</time>
+                    <time datetime="2025-03-29T18:26:33&#43;08:00">29 March 2025</time>
                   
                 </span>
               </span>

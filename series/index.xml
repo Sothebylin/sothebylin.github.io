@@ -7,22 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Sothebylin</copyright>
-    <lastBuildDate>Fri, 28 Mar 2025 21:09:38 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Fastai Course Learning </title>
-      <link>https://sothebylin.github.io/series/fastai-course-learning-/</link>
-      <pubDate>Fri, 28 Mar 2025 21:09:38 +0800</pubDate>
-      
-      <guid>https://sothebylin.github.io/series/fastai-course-learning-/</guid>
-      <description></description>
-      
-    </item>
+    <lastBuildDate>Sun, 30 Mar 2025 21:54:07 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Algorithm Learing</title>
       <link>https://sothebylin.github.io/series/algorithm-learing/</link>
-      <pubDate>Wed, 26 Mar 2025 20:48:50 +0800</pubDate>
+      <pubDate>Sun, 30 Mar 2025 21:54:07 +0800</pubDate>
       
       <guid>https://sothebylin.github.io/series/algorithm-learing/</guid>
       <description></description>
@@ -32,9 +22,19 @@
     <item>
       <title>蓝桥杯题库</title>
       <link>https://sothebylin.github.io/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/</link>
-      <pubDate>Wed, 26 Mar 2025 19:30:24 +0800</pubDate>
+      <pubDate>Sat, 29 Mar 2025 18:26:33 +0800</pubDate>
       
       <guid>https://sothebylin.github.io/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Fastai Course Learning </title>
+      <link>https://sothebylin.github.io/series/fastai-course-learning-/</link>
+      <pubDate>Fri, 28 Mar 2025 21:09:38 +0800</pubDate>
+      
+      <guid>https://sothebylin.github.io/series/fastai-course-learning-/</guid>
       <description></description>
       
     </item>
