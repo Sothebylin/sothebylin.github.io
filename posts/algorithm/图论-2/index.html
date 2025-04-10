@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="cn" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="zh-cn" />
@@ -15,7 +15,7 @@
   
   
   
-  <link rel="canonical" href="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-2/" />
+  <link rel="canonical" href="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-2/" />
   
   
   
@@ -64,7 +64,7 @@
   
   
   
-  <meta property="og:url" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-2/">
+  <meta property="og:url" content="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-2/">
   <meta property="og:site_name" content="春日汀">
   <meta property="og:title" content="图论-2">
   <meta property="og:description" content="Test">
@@ -73,11 +73,12 @@
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-03-30T21:54:07+08:00">
     <meta property="article:modified_time" content="2025-03-30T21:54:07+08:00">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
-      <meta property="og:see_also" content="https://sothebylin.github.io/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-3/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/%E8%B4%AA%E5%BF%83/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/dfsbfs/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/algorithm/%E5%8F%8C%E6%8C%87%E9%92%88/">
 
   
   <meta name="twitter:card" content="summary">
@@ -95,7 +96,7 @@
     "description": "\u003cfont color=#66CDAA\u003eTest\u003c\/font\u003e",
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/sothebylin.github.io\/posts\/algorithm\/%E5%9B%BE%E8%AE%BA-2\/",
+    "url" : "http:\/\/localhost:1313\/posts\/algorithm\/%E5%9B%BE%E8%AE%BA-2\/",
     "author" : {
       "@type": "Person",
       "name": "Sothebylin"
@@ -109,7 +110,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2175"
+    "wordCount": "4955"
   }]
   </script>
 
@@ -545,7 +546,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-30T21:54:07&#43;08:00">30 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2175 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span>
+  <time datetime="2025-03-30T21:54:07&#43;08:00">30 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>4955 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span>
   
 
   
@@ -660,8 +661,37 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#dijkstra三部曲代码随想录"><strong>Dijkstra三部曲</strong>(<a href="https://www.programmercarl.com/kamacoder/0047.%E5%8F%82%E4%BC%9Adijkstra%E6%9C%B4%E7%B4%A0.html">代码随想录</a>)</a></li>
-    <li><a href="#prim算法和dijkstra算法的区别"><strong>Prim算法和Dijkstra算法的区别</strong></a></li>
-    <li><a href="#floyd代码随想录">Floyd(<a href="https://www.programmercarl.com/kamacoder/0097.%E5%B0%8F%E6%98%8E%E9%80%9B%E5%85%AC%E5%9B%AD.html#%E6%80%9D%E8%B7%AF">代码随想录</a>)</a></li>
+    <li><a href="#prim算法和dijkstra算法的区别"><strong>Prim算法和Dijkstra算法的区别</strong></a>
+      <ul>
+        <li><a href="#蓝桥杯2020-省赛48318-限高杆">[蓝桥杯2020 省赛]48318. 限高杆</a>
+          <ul>
+            <li><a href="#问题描述">问题描述</a></li>
+            <li><a href="#输入格式">输入格式</a></li>
+            <li><a href="#输出格式">输出格式</a></li>
+            <li><a href="#样例输入">样例输入</a></li>
+            <li><a href="#样例输出">样例输出</a></li>
+            <li><a href="#样例说明">样例说明</a></li>
+            <li><a href="#tle版本1">TLE版本1</a></li>
+            <li><a href="#tle版本2使用堆优化">TLE版本2(使用堆优化)</a></li>
+            <li><a href="#分层图代码">分层图代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#floyd代码随想录">Floyd(<a href="https://www.programmercarl.com/kamacoder/0097.%E5%B0%8F%E6%98%8E%E9%80%9B%E5%85%AC%E5%9B%AD.html#%E6%80%9D%E8%B7%AF">代码随想录</a>)</a>
+      <ul>
+        <li><a href="#蓝桥杯2022国赛44748环境治理">[蓝桥杯2022国赛]44748环境治理</a>
+          <ul>
+            <li><a href="#问题描述-1">问题描述</a></li>
+            <li><a href="#输出格式-1">输出格式</a></li>
+            <li><a href="#样例输入-1">样例输入</a></li>
+            <li><a href="#样例输出-1">样例输出</a></li>
+            <li><a href="#评测用例规模与约定">评测用例规模与约定</a></li>
+            <li><a href="#ac代码">AC代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -676,8 +706,37 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#dijkstra三部曲代码随想录"><strong>Dijkstra三部曲</strong>(<a href="https://www.programmercarl.com/kamacoder/0047.%E5%8F%82%E4%BC%9Adijkstra%E6%9C%B4%E7%B4%A0.html">代码随想录</a>)</a></li>
-    <li><a href="#prim算法和dijkstra算法的区别"><strong>Prim算法和Dijkstra算法的区别</strong></a></li>
-    <li><a href="#floyd代码随想录">Floyd(<a href="https://www.programmercarl.com/kamacoder/0097.%E5%B0%8F%E6%98%8E%E9%80%9B%E5%85%AC%E5%9B%AD.html#%E6%80%9D%E8%B7%AF">代码随想录</a>)</a></li>
+    <li><a href="#prim算法和dijkstra算法的区别"><strong>Prim算法和Dijkstra算法的区别</strong></a>
+      <ul>
+        <li><a href="#蓝桥杯2020-省赛48318-限高杆">[蓝桥杯2020 省赛]48318. 限高杆</a>
+          <ul>
+            <li><a href="#问题描述">问题描述</a></li>
+            <li><a href="#输入格式">输入格式</a></li>
+            <li><a href="#输出格式">输出格式</a></li>
+            <li><a href="#样例输入">样例输入</a></li>
+            <li><a href="#样例输出">样例输出</a></li>
+            <li><a href="#样例说明">样例说明</a></li>
+            <li><a href="#tle版本1">TLE版本1</a></li>
+            <li><a href="#tle版本2使用堆优化">TLE版本2(使用堆优化)</a></li>
+            <li><a href="#分层图代码">分层图代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#floyd代码随想录">Floyd(<a href="https://www.programmercarl.com/kamacoder/0097.%E5%B0%8F%E6%98%8E%E9%80%9B%E5%85%AC%E5%9B%AD.html#%E6%80%9D%E8%B7%AF">代码随想录</a>)</a>
+      <ul>
+        <li><a href="#蓝桥杯2022国赛44748环境治理">[蓝桥杯2022国赛]44748环境治理</a>
+          <ul>
+            <li><a href="#问题描述-1">问题描述</a></li>
+            <li><a href="#输出格式-1">输出格式</a></li>
+            <li><a href="#样例输入-1">样例输入</a></li>
+            <li><a href="#样例输出-1">样例输出</a></li>
+            <li><a href="#评测用例规模与约定">评测用例规模与约定</a></li>
+            <li><a href="#ac代码">AC代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -729,7 +788,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
             § 1: 并查集
         </a>
     </div>
@@ -738,7 +797,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%93%88%E5%B8%8C/">
             § 2: 哈希
         </a>
     </div>
@@ -747,7 +806,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
             § 3: 回溯
         </a>
     </div>
@@ -756,7 +815,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
             § 4: 单调栈&amp;单调队列
         </a>
     </div>
@@ -765,7 +824,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
             § 5: 图论-1
         </a>
     </div>
@@ -775,6 +834,60 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         § 6: 本文
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-3/">
+            § 7: 图论-3
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8F%8C%E6%8C%87%E9%92%88/">
+            § 8: 双指针
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/dfsbfs/">
+            § 9: DFS&amp;BFS
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E8%B4%AA%E5%BF%83/">
+            § 10: 贪心
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+            § 10: 动态规划
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+            § 12: 背包问题
+        </a>
     </div>
     
     
@@ -931,6 +1044,416 @@
 </table>
 
 
+<h3 class="relative group">[蓝桥杯2020 省赛]48318. 限高杆 
+    <div id="%E8%93%9D%E6%A1%A5%E6%9D%AF2020-%E7%9C%81%E8%B5%9B48318-%E9%99%90%E9%AB%98%E6%9D%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF2020-%E7%9C%81%E8%B5%9B48318-%E9%99%90%E9%AB%98%E6%9D%86" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">问题描述 
+    <div id="%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>某市有 𝑛 个路口, 有 𝑚 段道路连接这些路口, 组成了该市的公路系统。其中一段道路两端一定连接两个不同的路口。道路中间不会穿过路口。 由于各种原因, 在一部分道路的中间设置了一些限高杆, 有限高杆的路段 货车无法通过。 在该市有两个重要的市场 𝐴 和 𝐵, 分别在路口 1 和 𝑛 附近, 货车从市场 𝐴 出发, 首先走到路口 1 , 然后经过公路系统走到路口 𝑛, 才能到达市场 𝐵 。两 个市场非常繁华, 每天有很多货车往返于两个市场之间。 市长发现, 由于限高杆很多, 导致货车可能需要绕行才能往返于市场之间, 这使得货车在公路系统中的行驶路程变长, 增加了对公路系统的损耗, 增加了 能源的消耗, 同时还增加了环境污染。 市长决定要将两段道路中的限高杆拆除, 使得市场 𝐴 和市场 𝐵 之间的路程 变短。请问最多能减少多长的距离?</p>
+
+
+<h4 class="relative group">输入格式 
+    <div id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>输入的第一行包含两个整数 𝑛,𝑚, 分别表示路口的数量和道路的段数。 接下来 𝑚 行, 每行四个整数 𝑎,𝑏,𝑐,𝑑, 表示路口 𝑎 和路口 𝑏 之间有一段长 度为 𝑐 的道路。如果 𝑑 为 0 , 表示这段道路上没有限高杆; 如果 𝑑 为 1 , 表示 这段道路上有限高杆。两个路口之间可能有多段道路。 输入数据保证在不拆除限高杆的情况下, 货车能通过公路系统从路口 1 正 常行驶到路口 𝑛 。</p>
+
+
+<h4 class="relative group">输出格式 
+    <div id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>输出一行，包含一个整数, 表示拆除两段逅路的限高杆后, 市场 𝐴 和市场 𝐵 之间的路程最大减少多长距离。</p>
+
+
+<h4 class="relative group">样例输入 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<blockquote>
+<p>5 7
+1 2 1 0
+2 3 2 1
+1 3 9 0
+5 3 8 0
+4 3 5 1
+4 3 9 0
+4 5 4 0</p></blockquote>
+
+
+<h4 class="relative group">样例输出 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<blockquote>
+<p>6</p></blockquote>
+
+
+<h4 class="relative group">样例说明 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%AF%B4%E6%98%8E" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%AF%B4%E6%98%8E" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>只有两段道路有限高杆, 全部拆除后, 1 到 𝑛 的路程由原来的 17 变为了 11，减少了 6。</p>
+<p>评测用例规模与约定</p>
+<p>对于 30 的评倒样例, 2≤𝑛≤10,1≤𝑚≤20,1≤𝑐≤100 。</p>
+<p>对于 50 的评澍样例, 2≤𝑛≤100,1≤𝑚≤1000,1≤𝑐≤1000 。</p>
+<p>对于 70 的评测样例, 2≤𝑛≤1000,1≤𝑚≤10000,1≤𝑐≤10000 。</p>
+<p>对于所有评测样例, 2≤𝑛≤10000,2≤𝑚≤100000,1≤𝑐≤10000, 至多有两段道珞有眼高杆。</p>
+
+
+<h4 class="relative group">TLE版本1 
+    <div id="tle%E7%89%88%E6%9C%AC1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tle%E7%89%88%E6%9C%AC1" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义限高杆道路结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">LimitedRoad</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>  <span class="c1">// 路口a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">// 路口b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>  <span class="c1">// 道路长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Dijkstra算法实现
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dist</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">INF</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 找到当前距离最小的节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_dist</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">u</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">visited</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 更新相邻节点距离
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">!=</span> <span class="n">INF</span> <span class="o">&amp;&amp;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 创建邻接矩阵
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">INF</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">limit_graph</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">INF</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 存储所有限高杆道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">LimitedRoad</span><span class="o">&gt;</span> <span class="n">limited_roads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 读取输入数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 无限高杆道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>      <span class="c1">// 限高杆道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">limit_graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">limit_graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit_graph</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">limited_roads</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 原始最短路径（不拆除任何限高杆）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">original_dist</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_reduction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 尝试拆除两段限高杆
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limited_roads</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">limited_roads</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 获取两条限高杆道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">LimitedRoad</span> <span class="n">road1</span> <span class="o">=</span> <span class="n">limited_roads</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">LimitedRoad</span> <span class="n">road2</span> <span class="o">=</span> <span class="n">limited_roads</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 临时将两条限高杆道路改为无限高杆
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">graph</span><span class="p">[</span><span class="n">road1</span><span class="p">.</span><span class="n">a</span><span class="p">][</span><span class="n">road1</span><span class="p">.</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">road1</span><span class="p">.</span><span class="n">b</span><span class="p">][</span><span class="n">road1</span><span class="p">.</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">road1</span><span class="p">.</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">road2</span><span class="p">.</span><span class="n">a</span><span class="p">][</span><span class="n">road2</span><span class="p">.</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">road2</span><span class="p">.</span><span class="n">b</span><span class="p">][</span><span class="n">road2</span><span class="p">.</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">road2</span><span class="p">.</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 计算新的最短路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">new_dist</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">original_dist</span> <span class="o">-</span> <span class="n">new_dist</span> <span class="o">&gt;</span> <span class="n">max_reduction</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">max_reduction</span> <span class="o">=</span> <span class="n">original_dist</span> <span class="o">-</span> <span class="n">new_dist</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 恢复原状
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">graph</span><span class="p">[</span><span class="n">road1</span><span class="p">.</span><span class="n">a</span><span class="p">][</span><span class="n">road1</span><span class="p">.</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">road1</span><span class="p">.</span><span class="n">b</span><span class="p">][</span><span class="n">road1</span><span class="p">.</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">road2</span><span class="p">.</span><span class="n">a</span><span class="p">][</span><span class="n">road2</span><span class="p">.</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">road2</span><span class="p">.</span><span class="n">b</span><span class="p">][</span><span class="n">road2</span><span class="p">.</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max_reduction</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+<h4 class="relative group">TLE版本2(使用堆优化) 
+    <div id="tle%E7%89%88%E6%9C%AC2%E4%BD%BF%E7%94%A8%E5%A0%86%E4%BC%98%E5%8C%96" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tle%E7%89%88%E6%9C%AC2%E4%BD%BF%E7%94%A8%E5%A0%86%E4%BC%98%E5%8C%96" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Edge</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">to</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">cost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Edge</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="o">:</span> <span class="n">to</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">cost</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">LimitedRoad</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 堆优化的Dijkstra算法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;&gt;&amp;</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dist</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">INF</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;&gt;</span> <span class="n">pq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">dist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">second</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">new_dist</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">cost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">new_dist</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_dist</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">new_dist</span><span class="p">,</span> <span class="n">v</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 使用邻接表存储图
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;&gt;</span> <span class="n">limit_graph</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">LimitedRoad</span><span class="o">&gt;</span> <span class="n">limited_roads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">limit_graph</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">limit_graph</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">limited_roads</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 原始最短路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">original_dist</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_reduction</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 尝试拆除两段限高杆
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">limited_roads</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">limited_roads</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">auto</span><span class="o">&amp;</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">limited_roads</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">auto</span><span class="o">&amp;</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">limited_roads</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 临时添加两条限高杆道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">graph</span><span class="p">[</span><span class="n">r1</span><span class="p">.</span><span class="n">a</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="n">b</span><span class="p">,</span> <span class="n">r1</span><span class="p">.</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r1</span><span class="p">.</span><span class="n">b</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">r1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">r1</span><span class="p">.</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r2</span><span class="p">.</span><span class="n">a</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">r2</span><span class="p">.</span><span class="n">b</span><span class="p">,</span> <span class="n">r2</span><span class="p">.</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r2</span><span class="p">.</span><span class="n">b</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">r2</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">r2</span><span class="p">.</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">new_dist</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_reduction</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_reduction</span><span class="p">,</span> <span class="n">original_dist</span> <span class="o">-</span> <span class="n">new_dist</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 移除临时添加的道路
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">graph</span><span class="p">[</span><span class="n">r1</span><span class="p">.</span><span class="n">a</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r1</span><span class="p">.</span><span class="n">b</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r2</span><span class="p">.</span><span class="n">a</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">graph</span><span class="p">[</span><span class="n">r2</span><span class="p">.</span><span class="n">b</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max_reduction</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>网上搜了一下，可能需要使用分层图？但是博主通过此题练熟练Dijsktra的目的达到了就没继续优化了。下面是分层图的代码</p>
+
+
+<h4 class="relative group">分层图代码 
+    <div id="%E5%88%86%E5%B1%82%E5%9B%BE%E4%BB%A3%E7%A0%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%88%86%E5%B1%82%E5%9B%BE%E4%BB%A3%E7%A0%81" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;climits&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">INF</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">MAX_LAYERS</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// 0层（未拆除）、1层（拆除1个）、2层（拆除2个）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Edge</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">to</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">is_limit</span><span class="p">;</span> <span class="c1">// is_limit=1表示限高杆
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Edge</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">)</span> <span class="o">:</span> <span class="n">to</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">cost</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">is_limit</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// dist[node][layer]：到达node节点，已拆除layer个限高杆的最短距离
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">dist</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">MAX_LAYERS</span><span class="p">,</span> <span class="n">INF</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dist</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 初始状态：1号节点，未拆除限高杆
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 优先队列：(distance, node, layer)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;&gt;&gt;</span> <span class="n">pq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pq</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">auto</span> <span class="p">[</span><span class="n">d</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">layer</span><span class="p">]</span> <span class="o">=</span> <span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">layer</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 已经找到更优解
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">cost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">is_limit</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">is_limit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 情况1：不拆除限高杆（仅当不是限高杆时可用）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_limit</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">+</span> <span class="n">cost</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">+</span> <span class="n">cost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">pq</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="n">layer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 情况2：拆除限高杆（可以转移到下一层）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">is_limit</span> <span class="o">&amp;&amp;</span> <span class="n">layer</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">MAX_LAYERS</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">+</span> <span class="n">cost</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">layer</span><span class="p">]</span> <span class="o">+</span> <span class="n">cost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">pq</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">layer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">,</span> <span class="n">layer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算拆除0/1/2个限高杆后的最短路径，求最大减少值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">original_dist</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">min_dist</span> <span class="o">=</span> <span class="n">min</span><span class="p">({</span><span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">2</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_reduction</span> <span class="o">=</span> <span class="n">original_dist</span> <span class="o">-</span> <span class="n">min_dist</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max_reduction</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
 <h2 class="relative group">Floyd(<a href="https://www.programmercarl.com/kamacoder/0097.%E5%B0%8F%E6%98%8E%E9%80%9B%E5%85%AC%E5%9B%AD.html#%E6%80%9D%E8%B7%AF" target="_blank">代码随想录</a>) 
     <div id="floyd%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95" class="anchor"></div>
     
@@ -1023,6 +1546,229 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
+
+<h3 class="relative group">[蓝桥杯2022国赛]44748环境治理 
+    <div id="%E8%93%9D%E6%A1%A5%E6%9D%AF2022%E5%9B%BD%E8%B5%9B44748%E7%8E%AF%E5%A2%83%E6%B2%BB%E7%90%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF2022%E5%9B%BD%E8%B5%9B44748%E7%8E%AF%E5%A2%83%E6%B2%BB%E7%90%86" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">问题描述 
+    <div id="%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../6-2.png" alt="" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="../6-3.png" alt="" />
+      
+    </figure>
+</p>
+
+
+<h4 class="relative group">输出格式 
+    <div id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>输出一行包含一个整数表示答条。</p>
+
+
+<h4 class="relative group">样例输入 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">3 10
+</span></span><span class="line"><span class="cl">0 2 4
+</span></span><span class="line"><span class="cl">2 0 1
+</span></span><span class="line"><span class="cl">4 1 0
+</span></span><span class="line"><span class="cl">0 2 2
+</span></span><span class="line"><span class="cl">2 0 0
+</span></span><span class="line"><span class="cl">2 0 0
+</span></span></code></pre></div>
+
+<h4 class="relative group">样例输出 
+    <div id="%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">2
+</span></span></code></pre></div>
+
+<h4 class="relative group">评测用例规模与约定 
+    <div id="%E8%AF%84%E6%B5%8B%E7%94%A8%E4%BE%8B%E8%A7%84%E6%A8%A1%E4%B8%8E%E7%BA%A6%E5%AE%9A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%AF%84%E6%B5%8B%E7%94%A8%E4%BE%8B%E8%A7%84%E6%A8%A1%E4%B8%8E%E7%BA%A6%E5%AE%9A" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>对于 30% 的评测用例, 1≤n≤10，0≤Lij≤Dij≤10</p>
+<p>对于 60% 的评测用例, 1≤n≤50，0≤Lij≤Dij≤100000</p>
+<p>对于所有评测用例, 1≤n≤100,0≤Lij≤Dij≤100000,0≤Q≤231−11</p>
+
+
+<h4 class="relative group">AC代码 
+    <div id="ac%E4%BB%A3%E7%A0%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ac%E4%BB%A3%E7%A0%81" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">ll</span> <span class="n">INF</span> <span class="o">=</span> <span class="mf">1e18</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">Q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;</span> <span class="n">D</span><span class="p">,</span> <span class="n">L</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="nf">calculate_P</span><span class="p">(</span><span class="n">ll</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算每个城市被改善的次数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">full_cycles</span> <span class="o">=</span> <span class="n">T</span> <span class="o">/</span> <span class="n">n</span><span class="p">;</span>  <span class="c1">// 完整周期数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">remaining_days</span> <span class="o">=</span> <span class="n">T</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>  <span class="c1">// 当前未完成周期的天数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_cycles</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">remaining_days</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 当前周期内被选中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 初始化邻接矩阵（当前道路灰尘度）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;&gt;</span> <span class="n">dist</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 道路(i,j)被改善的次数 = count[i] + count[j]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">ll</span> <span class="n">total_improve</span> <span class="o">=</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">count</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">total_improve</span><span class="p">,</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Floyd算法计算所有d(i,j)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 计算P值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">P</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">P</span> <span class="o">+=</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">P</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">Q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">D</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 读取初始灰尘度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 读取灰尘度下限
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 初始检查
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">initial_P</span> <span class="o">=</span> <span class="n">calculate_P</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">initial_P</span> <span class="o">&lt;=</span> <span class="n">Q</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 检查是否可能
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">max_possible_T</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_possible_T</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">max_possible_T</span><span class="p">,</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_possible_T</span> <span class="o">=</span> <span class="n">max_possible_T</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">final_P</span> <span class="o">=</span> <span class="n">calculate_P</span><span class="p">(</span><span class="n">max_possible_T</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">final_P</span> <span class="o">&gt;</span> <span class="n">Q</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 二分查找最小T
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ll</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">max_possible_T</span><span class="p">,</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">max_possible_T</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ll</span> <span class="n">current_P</span> <span class="o">=</span> <span class="n">calculate_P</span><span class="p">(</span><span class="n">mid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">current_P</span> <span class="o">&lt;=</span> <span class="n">Q</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ans</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
           
           
           
@@ -1042,7 +1788,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
             § 1: 并查集
         </a>
     </div>
@@ -1051,7 +1797,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%93%88%E5%B8%8C/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%93%88%E5%B8%8C/">
             § 2: 哈希
         </a>
     </div>
@@ -1060,7 +1806,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%9E%E6%BA%AF/">
             § 3: 回溯
         </a>
     </div>
@@ -1069,7 +1815,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8D%95%E8%B0%83%E6%A0%88/">
             § 4: 单调栈&amp;单调队列
         </a>
     </div>
@@ -1078,7 +1824,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://sothebylin.github.io/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-1/">
             § 5: 图论-1
         </a>
     </div>
@@ -1088,6 +1834,60 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         § 6: 本文
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%9B%BE%E8%AE%BA-3/">
+            § 7: 图论-3
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8F%8C%E6%8C%87%E9%92%88/">
+            § 8: 双指针
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/dfsbfs/">
+            § 9: DFS&amp;BFS
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E8%B4%AA%E5%BF%83/">
+            § 10: 贪心
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+            § 10: 动态规划
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="http://localhost:1313/posts/algorithm/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+            § 12: 背包问题
+        </a>
     </div>
     
     
@@ -1154,6 +1954,28 @@
         </span>
         <span>
           
+            <a class="flex text-right group ml-3" href="/posts/lanqiaocup/lanqiaocup-3/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Lanqiaocup-3</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-04-10T14:51:56&#43;08:00">10 April 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
         </span>
       </div>
     </div>
@@ -1217,7 +2039,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://sothebylin.github.io/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div

@@ -2,29 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>蓝桥杯题库 on 春日汀</title>
-    <link>https://sothebylin.github.io/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/</link>
+    <link>http://localhost:1313/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/</link>
     <description>Recent content in 蓝桥杯题库 on 春日汀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Sothebylin</copyright>
-    <lastBuildDate>Sat, 29 Mar 2025 18:26:33 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Apr 2025 14:51:56 +0800</lastBuildDate><atom:link href="http://localhost:1313/series/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lanqiaocup-3</title>
+      <link>http://localhost:1313/posts/lanqiaocup/lanqiaocup-3/</link>
+      <pubDate>Thu, 10 Apr 2025 14:51:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/lanqiaocup/lanqiaocup-3/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Lanqiaocup2023-2</title>
-      <link>https://sothebylin.github.io/posts/lanqiaocup/lanqiaocup2023-2/</link>
+      <link>http://localhost:1313/posts/lanqiaocup/lanqiaocup2023-2/</link>
       <pubDate>Sat, 29 Mar 2025 18:26:33 +0800</pubDate>
       
-      <guid>https://sothebylin.github.io/posts/lanqiaocup/lanqiaocup2023-2/</guid>
+      <guid>http://localhost:1313/posts/lanqiaocup/lanqiaocup2023-2/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Lanqiaocup2023-1</title>
-      <link>https://sothebylin.github.io/posts/lanqiaocup/lanqiaocup2023-1/</link>
+      <link>http://localhost:1313/posts/lanqiaocup/lanqiaocup2023-1/</link>
       <pubDate>Wed, 26 Mar 2025 19:30:24 +0800</pubDate>
       
-      <guid>https://sothebylin.github.io/posts/lanqiaocup/lanqiaocup2023-1/</guid>
+      <guid>http://localhost:1313/posts/lanqiaocup/lanqiaocup2023-1/</guid>
       <description></description>
       
     </item>
