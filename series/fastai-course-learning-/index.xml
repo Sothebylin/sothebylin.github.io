@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Sothebylin</copyright>
-    <lastBuildDate>Fri, 28 Mar 2025 21:09:38 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/series/fastai-course-learning-/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Apr 2025 18:15:32 +0800</lastBuildDate><atom:link href="https://sothebylin.github.io/series/fastai-course-learning-/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Learning Pytroch Based LinearModel</title>
+      <link>https://sothebylin.github.io/posts/deeplearning/learning-pytroch-based-linearmodel/</link>
+      <pubDate>Tue, 15 Apr 2025 18:15:32 +0800</pubDate>
+      
+      <guid>https://sothebylin.github.io/posts/deeplearning/learning-pytroch-based-linearmodel/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Learning Pytorch Based Collaborative Filtering</title>

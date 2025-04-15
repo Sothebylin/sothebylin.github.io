@@ -110,7 +110,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3642"
+    "wordCount": "3511"
   }]
   </script>
 
@@ -546,7 +546,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-04-10T20:04:21&#43;08:00">10 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3642 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+  <time datetime="2025-04-10T20:04:21&#43;08:00">10 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3511 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
   
 
   
@@ -1087,24 +1087,16 @@
     
 </h4>
 <p>输入</p>
-<blockquote>
-<p>39 200 4</p></blockquote>
-<p>输出</p>
-<blockquote>
-<p>No
-197</p></blockquote>
-<p>输入</p>
-<blockquote>
-<p>36 255 10</p></blockquote>
-<p>输出</p>
-<blockquote>
-<p>Yes
-6</p></blockquote>
-<p>说明/提示</p>
-<p>对于 $30%$ 的数据，$1  \le  T   \le  10$，$ 1   \le   S   \le  100$；</p>
-<p>对于 $50%$ 的数据，$1   \le  T   \le   10^3$，$ 1   \le  S  \le   10^4$；</p>
-<p>对于 $100%$ 的数据，$1   \le   T   \le   3\times  10^5$，$0   \le   M   \le   10^3$，$ 1   \le  S   \le   10^8$。</p>
-
+<pre tabindex="0"><code>39 200 4
+</code></pre><p>输出</p>
+<pre tabindex="0"><code>No	
+197
+</code></pre><p>输入</p>
+<pre tabindex="0"><code>36 255 10
+</code></pre><p>输出</p>
+<pre tabindex="0"><code>Yes
+6
+</code></pre>
 
 <h4 class="relative group">AC代码 
     <div id="ac%E4%BB%A3%E7%A0%81" class="anchor"></div>
@@ -1174,9 +1166,25 @@
     </span>        
     
 </h4>
-<p>在一个 $n \times n$ 的平面上，在每一行中有一条线段，第 $i$ 行的线段的左端点是$(i, L_{i})$，右端点是$(i, R_{i})$。</p>
-<p>你从 $(1,1)$ 点出发，要求沿途走过所有的线段，最终到达 $(n,n)$ 点，且所走的路程长度要尽量短。</p>
-<p>更具体一些说，你在任何时候只能选择向下走一步（行数增加 $1$）、向左走一步（列数减少 $1$）或是向右走一步（列数增加 $1$）。当然，由于你不能向上行走，因此在从任何一行向下走到另一行的时候，你必须保证已经走完本行的那条线段。</p>
+<p>在一个 n x n 的平面上，在每一行中有一条线段，第 i 行的线段的左端点是 (i, L_i)，右端点是 (i, R_i)。</p>
+<p>你从 (1,1) 点出发，要求沿途走过所有的线段，最终到达 (n,n) 点，且所走的路程长度要尽量短。</p>
+<p><strong>移动规则：</strong></p>
+<p>任何时候只能选择：</p>
+<ul>
+<li>
+<p>向下走一步（行数增加 1）</p>
+</li>
+<li>
+<p>向左走一步（列数减少 1）</p>
+</li>
+<li>
+<p>向右走一步（列数增加 1）</p>
+</li>
+<li>
+<p>限制条件：不能向上行走（即不能减少行数),在从第 i 行向下走到第 i+1 行之前，必须已经完整走过第 i 行的线段（即从 (i, L_i) 走到 (i, R_i) 或反之）。</p>
+</li>
+</ul>
+<p><strong>目标：</strong> 计算从 (1,1) 到 (n,n) 的最短路径长度。</p>
 
 
 <h4 class="relative group">输入格式 
@@ -1189,8 +1197,8 @@
     </span>        
     
 </h4>
-<p>第一行有一个整数 $n$。</p>
-<p>以下 $n$ 行，在第 $i$ 行（总第 $(i+1)$ 行）的两个整数表示 $L_i$ 和 $R_i$。</p>
+<p>第一行有一个整数 n​。</p>
+<p>以下n 行，在第 i 行（总第 (i+1) 行）的两个整数表示 L_i和 R_i。</p>
 
 
 <h4 class="relative group">输出格式 
@@ -1235,7 +1243,6 @@
  (5, 2) (5, 6)
  (6, 6) (6, 4) (6, 6)
 </code></pre><p>不难计算得到，路程的总长度是 $24$。</p>
-<p>对于 $100%$ 的数据中，$n \le 2 \times 10^4$，$1 \le L_i \le R_i \le n$。</p>
 
 
 <h4 class="relative group">AC代码 
@@ -1512,7 +1519,7 @@
     </span>        
     
 </h4>
-<p>有 N<em>N</em> 个圆盘需要放置在一条直线上的指定位置处，每个圆盘的中心位于已知的坐标点上。每两个相邻的圆盘必须相切。对于每个圆盘，都有一个允许的最小半径和最大半径的限制。请计算出所有满足条件的圆盘排列方案的数量。</p>
+<p>有 N 个圆盘需要放置在一条直线上的指定位置处，每个圆盘的中心位于已知的坐标点上。每两个相邻的圆盘必须相切。对于每个圆盘，都有一个允许的最小半径和最大半径的限制。请计算出所有满足条件的圆盘排列方案的数量。</p>
 
 
 <h4 class="relative group">输入格式 
@@ -1525,9 +1532,9 @@
     </span>        
     
 </h4>
-<p>第一行包含一个整数 N<em>N</em>，表示圆盘的数量。</p>
-<p>第二行包含 N<em>N</em> 个递增的整数，代表圆盘中心的坐标。</p>
-<p>接下来的 N<em>N</em> 行，每一行包含两个整数，分别表示一个圆盘的最小半径和最大半径。</p>
+<p>第一行包含一个整数 N，表示圆盘的数量。</p>
+<p>第二行包含 N个递增的整数，代表圆盘中心的坐标。</p>
+<p>接下来的 N行，每一行包含两个整数，分别表示一个圆盘的最小半径和最大半径。</p>
 
 
 <h4 class="relative group">输出格式 
@@ -1585,9 +1592,9 @@
     
 </h4>
 <ul>
-<li>2≤N≤1052≤<em>N</em>≤105</li>
-<li>圆盘中心的坐标是介于 00 和 109109 之间的整数</li>
-<li>圆盘的半径限制是介于 11 和 109109 之间的整数</li>
+<li>2≤N≤10^5</li>
+<li>圆盘中心的坐标是介于 0 和 10^9 之间的整数</li>
+<li>圆盘的半径限制是介于 1和 10^9 之间的整数</li>
 </ul>
 
 
